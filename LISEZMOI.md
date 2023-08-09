@@ -1,16 +1,20 @@
-# Delphi-Projects-Template
+# Socket Messaging Code Generator
 
 [This page in english.](README.md)
 
-Un modèle de dépôt git pour mes projets Delphi (ou autres).
+Ce dépôt contient les codes sources du programme en Delphi de génération d'unités Pascal simplifiant l'utilisation de [la librairie Socket Messaging](https://socketmessaging.developpeur-pascal.fr/) dans le cadre du développement de logiciels clients/serveur sur réseau TCP/IP.
 
-Ce template est distribué sous licence MIT. La licence AGPL est pour les projets que je crée à partir de ce template de dépôt de code. Utilisez la licence que vous voulez si vous utilisez ce template.
+La version de production du logiciel est [téléchargeable sur son site](https://smcodegenerator.olfsoftware.fr/).
+
+La librairie est utilisable à la main si vous préférez coder. Elle est téléchargeable depuis [son site](https://socketmessaging.developpeur-pascal.fr/) avec des exemples d'utilisation.
+
+Une présentation du projet et de son utilisation est prévue lors du [Delphi Coding Bootcamp 2023](https://learndelphi.org/fr/coding-bootcamp-2023/) le jeudi 17 août à 12:00 NN (Central time) (19 heures à Paris ?).
 
 Ce dépôt de code contient un projet développé en langage Pascal Objet sous Delphi. Vous ne savez pas ce qu'est Dephi ni où le télécharger ? Vous en saurez plus [sur ce site web](https://delphi-resources.developpeur-pascal.fr/).
 
 ## Installation
 
-Pour télécharger ce projet il est recommandé de passer par "git" mais vous pouvez aussi télécharger un ZIP directement depuis [son dépôt GitHub](https://github.com/DeveloppeurPascal/XXXXXXXXXX).
+Pour télécharger ce projet il est recommandé de passer par "git" mais vous pouvez aussi télécharger un ZIP directement depuis [son dépôt GitHub](https://github.com/DeveloppeurPascal/Socket-Messaging-Code-Generator).
 
 **Attention :** si le projet utilise des dépendances sous forme de sous modules ils seront absents du fichier ZIP. Vous devrez les télécharger à la main.
 
@@ -18,18 +22,19 @@ Pour télécharger ce projet il est recommandé de passer par "git" mais vous po
 
 Ce dépôt de code dépend des dépôts suivants :
 
-* project 1
-* project 2
+* [DeveloppeurPascal/AboutDialog-Delphi-Component](https://github.com/DeveloppeurPascal/AboutDialog-Delphi-Component) dans le sous-dossier ./lib-externes/AboutDialog-Delphi-Component
+* [DeveloppeurPascal/librairies](https://github.com/DeveloppeurPascal/librairies) dans le sous-dossier ./lib-externes/librairies
+* [DeveloppeurPascal/Socket-Messaging-Library](https://github.com/DeveloppeurPascal/Socket-Messaging-Library) dans le sous-dossier ./lib-externes/Socket-Messaging-Library
 
 ## Comment demander une nouvelle fonctionnalité, signaler un bogue ou une faille de sécurité ?
 
-Si vous voulez une réponse du propriétaire de ce dépôt la meilleure façon de procéder pour demander une nouvelle fonctionnalité ou signaler une anomalie est d'aller sur [le dépôt de code sur GitHub](https://github.com/DeveloppeurPascal/XXXXXXXXXX) et [d'ouvrir un ticket](https://github.com/DeveloppeurPascal/XXXXXXXXXX/issues).
+Si vous voulez une réponse du propriétaire de ce dépôt la meilleure façon de procéder pour demander une nouvelle fonctionnalité ou signaler une anomalie est d'aller sur [le dépôt de code sur GitHub](https://github.com/DeveloppeurPascal/Socket-Messaging-Code-Generator) et [d'ouvrir un ticket](https://github.com/DeveloppeurPascal/Socket-Messaging-Code-Generator/issues).
 
 Si vous avez trouvé une faille de sécurité n'en parlez pas en public avant qu'un correctif n'ait été déployé ou soit disponible. [Contactez l'auteur du dépôt en privé](https://developpeur-pascal.fr/nous-contacter.php) pour expliquer votre trouvaille.
 
 Vous pouvez aussi cloner ce dépôt de code et participer à ses évolutions en soumettant vos modifications si vous le désirez. Lisez les explications dans le fichier [CONTRIBUTING.md](CONTRIBUTING.md).
 
-## Modèle de licence double (seulement pour mes projets, pas pour ce modèle de dépôt de code)
+## Modèle de licence double
 
 Ce projet est distribué sous licence [AGPL 3.0 ou ultérieure] (https://choosealicense.com/licenses/agpl-3.0/).
 
