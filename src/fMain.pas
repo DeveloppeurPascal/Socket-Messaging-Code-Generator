@@ -24,7 +24,8 @@ uses
   FMX.Memo.Types,
   FMX.ScrollBox,
   FMX.Memo,
-  FMX.Edit;
+  FMX.Edit,
+  uDMAboutBoxImage;
 
 type
 {$SCOPEDENUMS ON}
