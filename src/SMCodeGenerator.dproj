@@ -8,7 +8,7 @@
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>135299</TargetedPlatforms>
         <AppType>Application</AppType>
-        <MainSource>SocketMessagesGenerator.dpr</MainSource>
+        <MainSource>SMCodeGenerator.dpr</MainSource>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -111,7 +111,7 @@
         <AUP_READ_PHONE_STATE>true</AUP_READ_PHONE_STATE>
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
         <Icns_MainIcns>$(BDS)\bin\delphi_PROJECTICNS.icns</Icns_MainIcns>
-        <SanitizedProjectName>SocketMessagesGenerator</SanitizedProjectName>
+        <SanitizedProjectName>SMCodeGenerator</SanitizedProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android)'!=''">
         <DCC_UsePackage>fmx;DbxCommonDriver;bindengine;IndyIPCommon;emsclient;FireDACCommonDriver;IndyProtocols;RadiantShapesFmx_Design;Skia.Package.RTL;IndyIPClient;dbxcds;FmxTeeUI;bindcompfmx;Olf.FMX.AboutBoxPackage;ibmonitor;FireDACSqliteDriver;DbxClientDriver;soapmidas;fmxFireDAC;dbexpress;inet;DataSnapCommon;fmxase;DzHTMLText_FMX;dbrtl;FireDACDBXDriver;Skia.Package.FMX;CustomIPTransport;DBXInterBaseDriver;IndySystem;RadiantShapesFmx;ibxbindings;bindcomp;FireDACCommon;IndyCore;RESTBackendComponents;bindcompdbx;rtl;RESTComponents;DBXSqliteDriver;IndyIPServer;dsnapxml;DataSnapClient;DataSnapProviderClient;DataSnapFireDAC;emsclientfiredac;FireDAC;FireDACDSDriver;xmlrtl;tethering;ibxpress;dsnap;CloudService;FMXTee;DataSnapNativeClient;soaprtl;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
@@ -311,7 +311,7 @@
         <BorlandProject>
             <Delphi.Personality>
                 <Source>
-                    <Source Name="MainSource">SocketMessagesGenerator.dpr</Source>
+                    <Source Name="MainSource">SMCodeGenerator.dpr</Source>
                 </Source>
             </Delphi.Personality>
             <Deployment Version="4">
@@ -336,6 +336,12 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="OSXARM64\Debug\SMCodeGenerator" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="OSXARM64">
+                        <RemoteName>SMCodeGenerator</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="OSXARM64\Debug\SocketMessagesGenerator.dSYM" Configuration="Debug" Class="ProjectOSXDebug">
                     <Platform Name="OSXARM64">
                         <RemoteName>SocketMessagesGenerator</RemoteName>
@@ -353,15 +359,9 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="OSXARM64\Debug\SocketMessagesGenerator" Configuration="Debug" Class="ProjectOutput">
-                    <Platform Name="OSXARM64">
-                        <RemoteName>SocketMessagesGenerator</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="Win32\Debug\SocketMessagesGenerator.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="Win32\Debug\SMCodeGenerator.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
-                        <RemoteName>SocketMessagesGenerator.exe</RemoteName>
+                        <RemoteName>SMCodeGenerator.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

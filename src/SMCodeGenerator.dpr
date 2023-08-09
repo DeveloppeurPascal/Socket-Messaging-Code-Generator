@@ -1,4 +1,4 @@
-program SocketMessagesGenerator;
+program SMCodeGenerator;
 
 uses
   System.StartUpCopy,
