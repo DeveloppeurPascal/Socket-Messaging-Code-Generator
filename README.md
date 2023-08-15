@@ -19,7 +19,7 @@ You can download and redistribute it free of charge, provided you do not modify 
 
 If you use this software regularly and are satisfied with it, you are invited to purchase an end-user license. Purchasing a license will give you access to software updates, as well as enabling optional features.
 
-[Buy a license](https://olfsoftware.lemonsqueezy.com/checkout/buy/9ce6e133-87fa-44f8-af98-b6988509bf5f))
+[Buy a license](https://olfsoftware.lemonsqueezy.com/checkout/buy/9ce6e133-87fa-44f8-af98-b6988509bf5f)
 
 You can also [visit the software website](https://smcodegenerator.olfsoftware.fr/) to find out more about how it works, access videos and articles, find out about the different versions available and their features, contact user support...
 
