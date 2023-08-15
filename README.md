@@ -6,7 +6,7 @@ This repository contains the source code for a Delphi program that generates Pas
 
 The library can be used by hand if you prefer to code. It can be downloaded from [its website](https://socketmessaging.developpeur-pascal.fr/) with examples of use.
 
-A presentation of the project and its use is planned at the [Delphi Coding Bootcamp 2023](https://learndelphi.org/coding-bootcamp-2023/) on Thursday August 17 at 12:00 NN (Central time) (7pm in Paris?).
+A presentation of the project and its use is planned at the [Delphi Coding Bootcamp 2023](https://learndelphi.org/coding-bootcamp-2023/) on Thursday August 17 at 12:00 NN (Central time) (7pm in Paris).
 
 This code repository contains a project developed in Object Pascal language under Delphi. You don't know what Delphi is and where to download it ? You'll learn more [on this web site](https://delphi-resources.developpeur-pascal.fr/).
 ## Using this software
