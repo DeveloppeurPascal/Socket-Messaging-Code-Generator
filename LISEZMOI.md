@@ -6,7 +6,7 @@ Ce dépôt contient les codes sources du programme en Delphi de génération d'u
 
 La librairie est utilisable à la main si vous préférez coder. Elle est téléchargeable depuis [son site](https://socketmessaging.developpeur-pascal.fr/) avec des exemples d'utilisation.
 
-Une présentation du projet et de son utilisation est prévue lors du [Delphi Coding Bootcamp 2023](https://learndelphi.org/fr/coding-bootcamp-2023/) le jeudi 17 août à 12:00 NN (Central time) (19 heures à Paris).
+Une [présentation du projet et de son utilisation](https://github.com/DeveloppeurPascal/DCB2023-Socket-Messaging-library-and-generator) a été faite lors du [Delphi Coding Bootcamp 2023](https://learndelphi.org/fr/coding-bootcamp-2023/).
 
 Ce dépôt de code contient un projet développé en langage Pascal Objet sous Delphi. Vous ne savez pas ce qu'est Dephi ni où le télécharger ? Vous en saurez plus [sur ce site web](https://delphi-resources.developpeur-pascal.fr/).
 
@@ -17,6 +17,8 @@ Ce logiciel est disponible dans une version de production directement installabl
 Vous pouvez le télécharger et le rediffuser gratuitement à condition de ne pas en modifier le contenu (installeur, programme, fichiers annexes, ...).
 
 [Télécharger le programme (Windows 64 bits)](https://olfsoftware.lemonsqueezy.com/checkout/buy/81ff8a98-6c96-463f-b399-0b5982be779c)
+
+Il est aussi disponible [depuis GetIt](https://getitnow.embarcadero.com/socket-messaging-code-generator/) directement Dans l'environnement de développement de Delphi à partir de la version 11.3 Alexandria.
 
 Si vous utilisez régulièrement ce logiciel et en êtes satisfait vous êtes invité à en acheter une licence d'utilisateur final. L'achat d'une licence vous donnera accès aux mises à jour du logiciel en plus d'activer d'évenuelles fonctionnalités optionnelles.
 

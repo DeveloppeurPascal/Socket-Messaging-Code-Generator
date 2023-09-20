@@ -6,9 +6,10 @@ This repository contains the source code for a Delphi program that generates Pas
 
 The library can be used by hand if you prefer to code. It can be downloaded from [its website](https://socketmessaging.developpeur-pascal.fr/) with examples of use.
 
-A presentation of the project and its use is planned at the [Delphi Coding Bootcamp 2023](https://learndelphi.org/coding-bootcamp-2023/) on Thursday August 17 at 12:00 NN (Central time) (7pm in Paris).
+A [presentation of the project and its use](https://github.com/DeveloppeurPascal/DCB2023-Socket-Messaging-library-and-generator) has been made during the [Delphi Coding Bootcamp 2023](https://learndelphi.org/coding-bootcamp-2023/).
 
 This code repository contains a project developed in Object Pascal language under Delphi. You don't know what Delphi is and where to download it ? You'll learn more [on this web site](https://delphi-resources.developpeur-pascal.fr/).
+
 ## Using this software
 
 This software is available in a directly installable or executable production version. It is distributed as shareware.
@@ -16,6 +17,8 @@ This software is available in a directly installable or executable production ve
 You can download and redistribute it free of charge, provided you do not modify its content (installer, program, additional files, etc.).
 
 [Download program (Windows 64 bits)](https://olfsoftware.lemonsqueezy.com/checkout/buy/81ff8a98-6c96-463f-b399-0b5982be779c)
+
+It is also available [from GetIt](https://getitnow.embarcadero.com/socket-messaging-code-generator/) directly in the Delphi development environment from version 11.3 Alexandria.
 
 If you use this software regularly and are satisfied with it, you are invited to purchase an end-user license. Purchasing a license will give you access to software updates, as well as enabling optional features.
 
