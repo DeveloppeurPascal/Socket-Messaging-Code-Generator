@@ -8,7 +8,7 @@ uses
   Olf.Net.Socket.Messaging;
 
 const
-  CVersionLevel = 1;
+  CVersionLevel = 2;
   CDefaultDelphiMessageClassNamePrefix = '';
   CDefaultDelphiMessageClassNameSuffix = 'Message';
 {$SCOPEDENUMS ON}
@@ -87,6 +87,7 @@ type
     FFields: TMessageFieldsList;
     FDescription: string;
     FMessageID: TOlfMessageId;
+    FGenerateTheMessage: boolean;
     procedure SetDelphiClassName(const Value: string);
     procedure SetDescription(const Value: string);
     procedure SetFields(const Value: TMessageFieldsList);
@@ -97,6 +98,7 @@ type
     function GetAsJSON: TJSONObject;
     procedure SetAsJSON(const Value: TJSONObject);
     function GetDelphiClassName: string;
+    procedure SetGenerateTheMessage(const Value: boolean);
   protected
     procedure ValueChanged;
   public
@@ -110,6 +112,8 @@ type
       read FRegisterMessageInTheServer write SetRegisterMessageInTheServer;
     property RegisterMessageInTheClient: boolean
       read FRegisterMessageInTheClient write SetRegisterMessageInTheClient;
+    property GenerateTheMessage: boolean read FGenerateTheMessage
+      write SetGenerateTheMessage;
     property Fields: TMessageFieldsList read FFields write SetFields;
     property AsJSON: TJSONObject read GetAsJSON write SetAsJSON;
     constructor Create(AParent: TMessagesList); virtual;
@@ -534,6 +538,7 @@ begin
   FDelphiClassName := '';
   FDescription := '';
   FMessageID := 0;
+  FGenerateTheMessage := true;
 end;
 
 destructor TMessage.Destroy;
@@ -551,6 +556,7 @@ begin
   Result.AddPair('delphiclassname', FDelphiClassName);
   Result.AddPair('regclient', FRegisterMessageInTheClient);
   Result.AddPair('regserver', FRegisterMessageInTheServer);
+  Result.AddPair('genmsg', FGenerateTheMessage);
   Fields.SortByOrder;
   Result.AddPair('fields', Fields.AsJSON);
 end;
@@ -593,6 +599,8 @@ begin
   if not Value.TryGetValue<boolean>('regserver', FRegisterMessageInTheServer)
   then
     FRegisterMessageInTheServer := true;
+  if not Value.TryGetValue<boolean>('genmsg', FGenerateTheMessage) then
+    FGenerateTheMessage := true;
   if not Value.TryGetValue<TJSONArray>('fields', jsa) then
   begin
     jsa := TJSONArray.Create;
@@ -628,6 +636,14 @@ begin
     exit;
   ValueChanged;
   FFields := Value;
+end;
+
+procedure TMessage.SetGenerateTheMessage(const Value: boolean);
+begin
+  if (FGenerateTheMessage = Value) then
+    exit;
+  ValueChanged;
+  FGenerateTheMessage := Value;
 end;
 
 procedure TMessage.SetMessageID(const Value: TOlfMessageId);
@@ -700,108 +716,109 @@ var
   fld: TMessageField;
 begin
   for i := 0 to Count - 1 do
-  begin
-    msg := items[i];
-    Result := Result + '{$REGION ''T' + msg.DelphiClassName + ''' }' +
-      sLineBreak;
-    Result := Result + sLineBreak;
-
-    Result := Result + 'constructor T' + msg.DelphiClassName + '.Create;' +
-      sLineBreak;
-    Result := Result + 'begin' + sLineBreak;
-    Result := Result + '  inherited;' + sLineBreak;
-    Result := Result + '  MessageID := ' + msg.MessageID.ToString + ';' +
-      sLineBreak;
-    for j := 0 to msg.Fields.Count - 1 do
+    if items[i].GenerateTheMessage then
     begin
-      fld := msg.Fields[j];
-      if (fld.DefaultValue.IsEmpty) then
-      else
-        Result := Result + '  F' + fld.DelphiFieldName + ' := ' +
-          fld.DefaultValue + ';' + sLineBreak;
-    end;
-    Result := Result + 'end;' + sLineBreak;
-    Result := Result + sLineBreak;
+      msg := items[i];
+      Result := Result + '{$REGION ''T' + msg.DelphiClassName + ''' }' +
+        sLineBreak;
+      Result := Result + sLineBreak;
 
-    Result := Result + 'function T' + msg.DelphiClassName +
-      '.GetNewInstance: TOlfSMMessage;' + sLineBreak;
-    Result := Result + 'begin' + sLineBreak;
-    Result := Result + '  result := T' + msg.DelphiClassName + '.Create;' +
-      sLineBreak;
-    Result := Result + 'end;' + sLineBreak;
-    Result := Result + sLineBreak;
-
-    Result := Result + 'procedure T' + msg.DelphiClassName +
-      '.LoadFromStream(Stream: TStream);' + sLineBreak;
-    Result := Result + 'begin' + sLineBreak;
-    Result := Result + '  inherited;' + sLineBreak;
-    for j := 0 to msg.Fields.Count - 1 do
-    begin
-      fld := msg.Fields[j];
-      case fld.DelphiFieldStreamFormat of
-        TDelphiFieldStreamFormat.RWSizeOf:
-          begin
-            Result := Result + '  if (Stream.read(F' + fld.DelphiFieldName +
-              ', sizeof(F' + fld.DelphiFieldName + ')) <> sizeof(F' +
-              fld.DelphiFieldName + ')) then' + sLineBreak;
-            Result := Result + '    raise exception.Create(''Can''''t load "' +
-              fld.DelphiFieldName + '" value.'');' + sLineBreak;
-            // TODO : use Name instead of DelphiFieldName (or choose in the field editor)
-          end;
-        TDelphiFieldStreamFormat.RWString:
-          Result := Result + '  F' + fld.DelphiFieldName +
-            ' := LoadStringFromStream(Stream);' + sLineBreak;
-        TDelphiFieldStreamFormat.ClassLoadFromStreamSaveToStream:
-          Result := Result + '  F' + fld.DelphiFieldName +
-            '.LoadFromStream(Stream);' + sLineBreak;
-      else
-        Result := Result + '// TODO : Load "F' + fld.DelphiFieldName +
-          '" from the stream "Stream"' + sLineBreak;
-      end;
-    end;
-    Result := Result + 'end;' + sLineBreak;
-    Result := Result + sLineBreak;
-
-    Result := Result + 'procedure T' + msg.DelphiClassName +
-      '.SaveToStream(Stream: TStream);' + sLineBreak;
-    Result := Result + 'begin' + sLineBreak;
-    Result := Result + '  inherited;' + sLineBreak;
-    for j := 0 to msg.Fields.Count - 1 do
-    begin
-      fld := msg.Fields[j];
-      case fld.DelphiFieldStreamFormat of
-        TDelphiFieldStreamFormat.RWSizeOf:
-          Result := Result + '  Stream.Write(F' + fld.DelphiFieldName +
-            ', sizeof(F' + fld.DelphiFieldName + '));' + sLineBreak;
-        TDelphiFieldStreamFormat.RWString:
-          Result := Result + '  SaveStringToStream(F' + fld.DelphiFieldName +
-            ', Stream);' + sLineBreak;
-        TDelphiFieldStreamFormat.ClassLoadFromStreamSaveToStream:
-          Result := Result + '  F' + fld.DelphiFieldName +
-            '.SaveToStream(Stream);' + sLineBreak;
-      else
-        Result := Result + '// TODO : Save "F' + fld.DelphiFieldName +
-          '" to the stream "Stream"' + sLineBreak;
-      end;
-    end;
-    Result := Result + 'end;' + sLineBreak;
-    Result := Result + sLineBreak;
-
-    for j := 0 to msg.Fields.Count - 1 do
-    begin
-      fld := msg.Fields[j];
-      Result := Result + 'procedure T' + msg.DelphiClassName + '.Set' +
-        fld.DelphiFieldName + '(const Value: ' + fld.DelphiFieldType + ');' +
+      Result := Result + 'constructor T' + msg.DelphiClassName + '.Create;' +
         sLineBreak;
       Result := Result + 'begin' + sLineBreak;
-      Result := Result + '  F' + fld.DelphiFieldName + ' := Value;' +
+      Result := Result + '  inherited;' + sLineBreak;
+      Result := Result + '  MessageID := ' + msg.MessageID.ToString + ';' +
+        sLineBreak;
+      for j := 0 to msg.Fields.Count - 1 do
+      begin
+        fld := msg.Fields[j];
+        if (fld.DefaultValue.IsEmpty) then
+        else
+          Result := Result + '  F' + fld.DelphiFieldName + ' := ' +
+            fld.DefaultValue + ';' + sLineBreak;
+      end;
+      Result := Result + 'end;' + sLineBreak;
+      Result := Result + sLineBreak;
+
+      Result := Result + 'function T' + msg.DelphiClassName +
+        '.GetNewInstance: TOlfSMMessage;' + sLineBreak;
+      Result := Result + 'begin' + sLineBreak;
+      Result := Result + '  result := T' + msg.DelphiClassName + '.Create;' +
         sLineBreak;
       Result := Result + 'end;' + sLineBreak;
       Result := Result + sLineBreak;
+
+      Result := Result + 'procedure T' + msg.DelphiClassName +
+        '.LoadFromStream(Stream: TStream);' + sLineBreak;
+      Result := Result + 'begin' + sLineBreak;
+      Result := Result + '  inherited;' + sLineBreak;
+      for j := 0 to msg.Fields.Count - 1 do
+      begin
+        fld := msg.Fields[j];
+        case fld.DelphiFieldStreamFormat of
+          TDelphiFieldStreamFormat.RWSizeOf:
+            begin
+              Result := Result + '  if (Stream.read(F' + fld.DelphiFieldName +
+                ', sizeof(F' + fld.DelphiFieldName + ')) <> sizeof(F' +
+                fld.DelphiFieldName + ')) then' + sLineBreak;
+              Result := Result + '    raise exception.Create(''Can''''t load "'
+                + fld.DelphiFieldName + '" value.'');' + sLineBreak;
+              // TODO : use Name instead of DelphiFieldName (or choose in the field editor)
+            end;
+          TDelphiFieldStreamFormat.RWString:
+            Result := Result + '  F' + fld.DelphiFieldName +
+              ' := LoadStringFromStream(Stream);' + sLineBreak;
+          TDelphiFieldStreamFormat.ClassLoadFromStreamSaveToStream:
+            Result := Result + '  F' + fld.DelphiFieldName +
+              '.LoadFromStream(Stream);' + sLineBreak;
+        else
+          Result := Result + '// TODO : Load "F' + fld.DelphiFieldName +
+            '" from the stream "Stream"' + sLineBreak;
+        end;
+      end;
+      Result := Result + 'end;' + sLineBreak;
+      Result := Result + sLineBreak;
+
+      Result := Result + 'procedure T' + msg.DelphiClassName +
+        '.SaveToStream(Stream: TStream);' + sLineBreak;
+      Result := Result + 'begin' + sLineBreak;
+      Result := Result + '  inherited;' + sLineBreak;
+      for j := 0 to msg.Fields.Count - 1 do
+      begin
+        fld := msg.Fields[j];
+        case fld.DelphiFieldStreamFormat of
+          TDelphiFieldStreamFormat.RWSizeOf:
+            Result := Result + '  Stream.Write(F' + fld.DelphiFieldName +
+              ', sizeof(F' + fld.DelphiFieldName + '));' + sLineBreak;
+          TDelphiFieldStreamFormat.RWString:
+            Result := Result + '  SaveStringToStream(F' + fld.DelphiFieldName +
+              ', Stream);' + sLineBreak;
+          TDelphiFieldStreamFormat.ClassLoadFromStreamSaveToStream:
+            Result := Result + '  F' + fld.DelphiFieldName +
+              '.SaveToStream(Stream);' + sLineBreak;
+        else
+          Result := Result + '// TODO : Save "F' + fld.DelphiFieldName +
+            '" to the stream "Stream"' + sLineBreak;
+        end;
+      end;
+      Result := Result + 'end;' + sLineBreak;
+      Result := Result + sLineBreak;
+
+      for j := 0 to msg.Fields.Count - 1 do
+      begin
+        fld := msg.Fields[j];
+        Result := Result + 'procedure T' + msg.DelphiClassName + '.Set' +
+          fld.DelphiFieldName + '(const Value: ' + fld.DelphiFieldType + ');' +
+          sLineBreak;
+        Result := Result + 'begin' + sLineBreak;
+        Result := Result + '  F' + fld.DelphiFieldName + ' := Value;' +
+          sLineBreak;
+        Result := Result + 'end;' + sLineBreak;
+        Result := Result + sLineBreak;
+      end;
+      Result := Result + '{$ENDREGION}' + sLineBreak;
+      Result := Result + sLineBreak;
     end;
-    Result := Result + '{$ENDREGION}' + sLineBreak;
-    Result := Result + sLineBreak;
-  end;
 end;
 
 function TMessagesList.GetDelphiInterface: string;
@@ -811,69 +828,70 @@ var
   fld: TMessageField;
 begin
   for i := 0 to Count - 1 do
-  begin
-    msg := items[i];
-    if not msg.name.IsEmpty then
+    if items[i].GenerateTheMessage then
     begin
-      Result := Result + '  /// <summary>' + sLineBreak;
-      Result := Result + WrapTextWithPrefix('  /// Message ID ',
-        msg.MessageID.ToString + ': ' + msg.name) + sLineBreak;
-      Result := Result + '  /// </summary>' + sLineBreak;
-    end;
-    if not msg.Description.IsEmpty then
-    begin
-      Result := Result + '  /// <remarks>' + sLineBreak;
-      Result := Result + WrapTextWithPrefix('  /// ', msg.Description) +
-        sLineBreak;
-      Result := Result + '  /// </remarks>' + sLineBreak;
-    end;
-    Result := Result + '  T' + msg.DelphiClassName + ' = class(TOlfSMMessage)' +
-      sLineBreak;
-    Result := Result + '  private' + sLineBreak;
-    for j := 0 to msg.Fields.Count - 1 do
-    begin
-      fld := msg.Fields[j];
-      Result := Result + '    F' + fld.DelphiFieldName + ': ' +
-        fld.DelphiFieldType + ';' + sLineBreak;
-    end;
-    for j := 0 to msg.Fields.Count - 1 do
-    begin
-      fld := msg.Fields[j];
-      Result := Result + '    procedure Set' + fld.DelphiFieldName +
-        '(const Value: ' + fld.DelphiFieldType + ');' + sLineBreak;
-    end;
-    Result := Result + '  public' + sLineBreak;
-    for j := 0 to msg.Fields.Count - 1 do
-    begin
-      fld := msg.Fields[j];
-      if not fld.name.IsEmpty then
+      msg := items[i];
+      if not msg.name.IsEmpty then
       begin
-        Result := Result + '    /// <summary>' + sLineBreak;
-        Result := Result + WrapTextWithPrefix('    /// ', fld.name) +
-          sLineBreak;
-        Result := Result + '    /// </summary>' + sLineBreak;
+        Result := Result + '  /// <summary>' + sLineBreak;
+        Result := Result + WrapTextWithPrefix('  /// Message ID ',
+          msg.MessageID.ToString + ': ' + msg.name) + sLineBreak;
+        Result := Result + '  /// </summary>' + sLineBreak;
       end;
-      if not fld.Description.IsEmpty then
+      if not msg.Description.IsEmpty then
       begin
-        Result := Result + '    /// <remarks>' + sLineBreak;
-        Result := Result + WrapTextWithPrefix('    /// ', fld.Description) +
+        Result := Result + '  /// <remarks>' + sLineBreak;
+        Result := Result + WrapTextWithPrefix('  /// ', msg.Description) +
           sLineBreak;
-        Result := Result + '    /// </remarks>' + sLineBreak;
+        Result := Result + '  /// </remarks>' + sLineBreak;
       end;
-      Result := Result + '    property ' + fld.DelphiFieldName + ': ' +
-        fld.DelphiFieldType + ' read F' + fld.DelphiFieldName + ' write Set' +
-        fld.DelphiFieldName + ';' + sLineBreak;
+      Result := Result + '  T' + msg.DelphiClassName + ' = class(TOlfSMMessage)'
+        + sLineBreak;
+      Result := Result + '  private' + sLineBreak;
+      for j := 0 to msg.Fields.Count - 1 do
+      begin
+        fld := msg.Fields[j];
+        Result := Result + '    F' + fld.DelphiFieldName + ': ' +
+          fld.DelphiFieldType + ';' + sLineBreak;
+      end;
+      for j := 0 to msg.Fields.Count - 1 do
+      begin
+        fld := msg.Fields[j];
+        Result := Result + '    procedure Set' + fld.DelphiFieldName +
+          '(const Value: ' + fld.DelphiFieldType + ');' + sLineBreak;
+      end;
+      Result := Result + '  public' + sLineBreak;
+      for j := 0 to msg.Fields.Count - 1 do
+      begin
+        fld := msg.Fields[j];
+        if not fld.name.IsEmpty then
+        begin
+          Result := Result + '    /// <summary>' + sLineBreak;
+          Result := Result + WrapTextWithPrefix('    /// ', fld.name) +
+            sLineBreak;
+          Result := Result + '    /// </summary>' + sLineBreak;
+        end;
+        if not fld.Description.IsEmpty then
+        begin
+          Result := Result + '    /// <remarks>' + sLineBreak;
+          Result := Result + WrapTextWithPrefix('    /// ', fld.Description) +
+            sLineBreak;
+          Result := Result + '    /// </remarks>' + sLineBreak;
+        end;
+        Result := Result + '    property ' + fld.DelphiFieldName + ': ' +
+          fld.DelphiFieldType + ' read F' + fld.DelphiFieldName + ' write Set' +
+          fld.DelphiFieldName + ';' + sLineBreak;
+      end;
+      Result := Result + '    constructor Create; override;' + sLineBreak;
+      Result := Result +
+        '    procedure LoadFromStream(Stream: TStream); override;' + sLineBreak;
+      Result := Result +
+        '    procedure SaveToStream(Stream: TStream); override;' + sLineBreak;
+      Result := Result + '    function GetNewInstance: TOlfSMMessage; override;'
+        + sLineBreak;
+      Result := Result + '  end;' + sLineBreak;
+      Result := Result + sLineBreak;
     end;
-    Result := Result + '    constructor Create; override;' + sLineBreak;
-    Result := Result +
-      '    procedure LoadFromStream(Stream: TStream); override;' + sLineBreak;
-    Result := Result + '    procedure SaveToStream(Stream: TStream); override;'
-      + sLineBreak;
-    Result := Result + '    function GetNewInstance: TOlfSMMessage; override;' +
-      sLineBreak;
-    Result := Result + '  end;' + sLineBreak;
-    Result := Result + sLineBreak;
-  end;
 end;
 
 function TMessagesList.GetMaxMessageID: TOlfMessageId;
@@ -1096,8 +1114,8 @@ begin
   Result := Result + '// ****************************************' + sLineBreak;
   Result := Result + '// File generator : ' + application.MainForm.Caption +
     sLineBreak;
-  Result := Result +
-    '// Website : https://smcodegenerator.olfsoftware.fr/ ' + sLineBreak;
+  Result := Result + '// Website : https://smcodegenerator.olfsoftware.fr/ ' +
+    sLineBreak;
   Result := Result + '// Generation date : ' + DateTimeToStr(now) + sLineBreak;
   Result := Result + '// ' + sLineBreak;
   Result := Result +
@@ -1137,7 +1155,8 @@ begin
   Result := Result + '  private' + sLineBreak;
   Result := Result + '  protected' + sLineBreak;
   for i := 0 to Messages.Count - 1 do
-    if Messages[i].RegisterMessageInTheServer then
+    if Messages[i].RegisterMessageInTheServer and Messages[i].GenerateTheMessage
+    then
     begin
       Result := Result + '    procedure onReceiveMessage' + Messages[i]
         .MessageID.ToString + '(Const ASender: TOlfSMSrvConnectedClient;' +
@@ -1146,7 +1165,8 @@ begin
     end;
   Result := Result + '  public' + sLineBreak;
   for i := 0 to Messages.Count - 1 do
-    if Messages[i].RegisterMessageInTheServer then
+    if Messages[i].RegisterMessageInTheServer and Messages[i].GenerateTheMessage
+    then
     begin
       Result := Result + '    onReceive' + Messages[i].DelphiClassName +
         sLineBreak;
@@ -1163,7 +1183,8 @@ begin
   Result := Result + '  private' + sLineBreak;
   Result := Result + '  protected' + sLineBreak;
   for i := 0 to Messages.Count - 1 do
-    if Messages[i].RegisterMessageInTheClient then
+    if Messages[i].RegisterMessageInTheClient and Messages[i].GenerateTheMessage
+    then
     begin
       Result := Result + '    procedure onReceiveMessage' + Messages[i]
         .MessageID.ToString + '(Const ASender: TOlfSMSrvConnectedClient;' +
@@ -1172,7 +1193,8 @@ begin
     end;
   Result := Result + '  public' + sLineBreak;
   for i := 0 to Messages.Count - 1 do
-    if Messages[i].RegisterMessageInTheClient then
+    if Messages[i].RegisterMessageInTheClient and Messages[i].GenerateTheMessage
+    then
     begin
       Result := Result + '    onReceive' + Messages[i].DelphiClassName +
         sLineBreak;
@@ -1297,7 +1319,8 @@ begin
     + sLineBreak;
   Result := Result + 'begin' + sLineBreak;
   for i := 0 to Messages.Count - 1 do
-    if Messages[i].RegisterMessageInTheServer then
+    if Messages[i].RegisterMessageInTheServer and Messages[i].GenerateTheMessage
+    then
       Result := Result + '  Server.RegisterMessageToReceive(T' + Messages[i]
         .DelphiClassName + '.Create);' + sLineBreak;
   Result := Result + 'end;' + sLineBreak;
@@ -1307,7 +1330,8 @@ begin
     + sLineBreak;
   Result := Result + 'begin' + sLineBreak;
   for i := 0 to Messages.Count - 1 do
-    if Messages[i].RegisterMessageInTheClient then
+    if Messages[i].RegisterMessageInTheClient and Messages[i].GenerateTheMessage
+    then
       Result := Result + '  Client.RegisterMessageToReceive(T' + Messages[i]
         .DelphiClassName + '.Create);' + sLineBreak;
   Result := Result + 'end;' + sLineBreak;
@@ -1324,14 +1348,16 @@ begin
   Result := Result + '  RegisterMessagesReceivedByTheServer(self);' +
     sLineBreak;
   for i := 0 to Messages.Count - 1 do
-    if Messages[i].RegisterMessageInTheServer then
+    if Messages[i].RegisterMessageInTheServer and Messages[i].GenerateTheMessage
+    then
       Result := Result + '  SubscribeToMessage(' + Messages[i]
         .MessageID.ToString + ', onReceiveMessage' + Messages[i]
         .MessageID.ToString + ');' + sLineBreak;
   Result := Result + 'end;' + sLineBreak;
   Result := Result + sLineBreak;
   for i := 0 to Messages.Count - 1 do
-    if Messages[i].RegisterMessageInTheServer then
+    if Messages[i].RegisterMessageInTheServer and Messages[i].GenerateTheMessage
+    then
     begin
       Result := Result + 'procedure T' + DelphiServerClassName +
         '.onReceiveMessage' + Messages[i].MessageID.ToString +
@@ -1367,14 +1393,16 @@ begin
   Result := Result + '  RegisterMessagesReceivedByTheClient(self);' +
     sLineBreak;
   for i := 0 to Messages.Count - 1 do
-    if Messages[i].RegisterMessageInTheClient then
+    if Messages[i].RegisterMessageInTheClient and Messages[i].GenerateTheMessage
+    then
       Result := Result + '  SubscribeToMessage(' + Messages[i]
         .MessageID.ToString + ', onReceiveMessage' + Messages[i]
         .MessageID.ToString + ');' + sLineBreak;
   Result := Result + 'end;' + sLineBreak;
   Result := Result + sLineBreak;
   for i := 0 to Messages.Count - 1 do
-    if Messages[i].RegisterMessageInTheClient then
+    if Messages[i].RegisterMessageInTheClient and Messages[i].GenerateTheMessage
+    then
     begin
       Result := Result + 'procedure T' + DelphiClientClassName +
         '.onReceiveMessage' + Messages[i].MessageID.ToString +

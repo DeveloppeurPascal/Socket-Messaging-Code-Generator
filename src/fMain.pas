@@ -129,6 +129,7 @@ type
     rbFieldStreamClass: TRadioButton;
     rbFieldStreamString: TRadioButton;
     rbFieldStreamTODO: TRadioButton;
+    cbMessageGenerate: TCheckBox;
     procedure FormCreate(Sender: TObject);
     procedure mnuQuitClick(Sender: TObject);
     procedure mnuAboutClick(Sender: TObject);
@@ -312,6 +313,7 @@ begin
     cbMessageRegisterOnServer.IsChecked;
   CurrentMessage.RegisterMessageInTheClient :=
     cbMessageRegisterOnClient.IsChecked;
+  CurrentMessage.GenerateTheMessage := cbMessageGenerate.IsChecked;
 
   RefreshFormCaption;
 end;
@@ -562,6 +564,7 @@ begin
     CurrentMessage.RegisterMessageInTheServer;
   cbMessageRegisterOnClient.IsChecked :=
     CurrentMessage.RegisterMessageInTheClient;
+  cbMessageGenerate.IsChecked := CurrentMessage.GenerateTheMessage;
 
   lblMessageID.Text := 'Internal message ID : ' +
     CurrentMessage.messageid.ToString;

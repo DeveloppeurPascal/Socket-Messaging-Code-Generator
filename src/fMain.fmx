@@ -167,7 +167,7 @@ object Form1: TForm1
       Size.Width = 563.000000000000000000
       Size.Height = 813.000000000000000000
       Size.PlatformDefault = False
-      TabIndex = 2
+      TabIndex = 0
       TabOrder = 1
       TabPosition = PlatformDefault
       Sizes = (
@@ -182,7 +182,7 @@ object Form1: TForm1
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = False
+        IsSelected = True
         Size.Width = 84.000000000000000000
         Size.Height = 26.000000000000000000
         Size.PlatformDefault = False
@@ -726,11 +726,11 @@ object Form1: TForm1
           end
           object GridPanelLayout2: TGridPanelLayout
             Align = Top
-            Position.Y = 400.000000000000000000
+            Position.Y = 439.000000000000000000
             Size.Width = 563.000000000000000000
             Size.Height = 136.000000000000000000
             Size.PlatformDefault = False
-            TabOrder = 9
+            TabOrder = 10
             ColumnCollection = <
               item
                 Value = 50.000000000000000000
@@ -830,7 +830,7 @@ object Form1: TForm1
             Size.Width = 543.000000000000000000
             Size.Height = 19.000000000000000000
             Size.PlatformDefault = False
-            TabOrder = 8
+            TabOrder = 9
             Text = 'Received by the client'
           end
           object lblMessageID: TLabel
@@ -848,6 +848,20 @@ object Form1: TForm1
             Text = 'lblMessageID'
             TabOrder = 0
           end
+          object cbMessageGenerate: TCheckBox
+            Align = Top
+            Margins.Left = 10.000000000000000000
+            Margins.Top = 10.000000000000000000
+            Margins.Right = 10.000000000000000000
+            Margins.Bottom = 10.000000000000000000
+            Position.X = 10.000000000000000000
+            Position.Y = 410.000000000000000000
+            Size.Width = 543.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 8
+            Text = 'Generate this message in exported unit'
+          end
         end
       end
       object tiFieldEdit: TTabItem
@@ -855,7 +869,7 @@ object Form1: TForm1
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = True
+        IsSelected = False
         Size.Width = 73.000000000000000000
         Size.Height = 26.000000000000000000
         Size.PlatformDefault = False
