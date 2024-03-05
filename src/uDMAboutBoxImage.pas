@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Classes, System.ImageList, FMX.ImgList;
 
 type
-  TDataModule1 = class(TDataModule)
+  TdmAboutBoxImage = class(TDataModule)
     ImageList1: TImageList;
   private
     { Déclarations privées }
@@ -15,7 +15,7 @@ type
   end;
 
 var
-  DataModule1: TDataModule1;
+  dmAboutBoxImage: TdmAboutBoxImage;
 
 implementation
 

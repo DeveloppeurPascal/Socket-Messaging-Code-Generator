@@ -31,7 +31,7 @@ type
 {$SCOPEDENUMS ON}
   TSMGScreen = (None, Home, Project);
 
-  TForm1 = class(TForm)
+  TfrmMain = class(TForm)
     MainMenu1: TMainMenu;
     OlfAboutDialog1: TOlfAboutDialog;
     mnuMacOS: TMenuItem;
@@ -187,7 +187,7 @@ type
   end;
 
 var
-  Form1: TForm1;
+  frmMain: TfrmMain;
 
 implementation
 
@@ -198,12 +198,12 @@ uses
   System.IOUtils,
   u_urlOpen;
 
-procedure TForm1.btnFieldCancelClick(Sender: TObject);
+procedure TfrmMain.btnFieldCancelClick(Sender: TObject);
 begin
   InitEditFieldTab;
 end;
 
-procedure TForm1.btnFieldDeleteClick(Sender: TObject);
+procedure TfrmMain.btnFieldDeleteClick(Sender: TObject);
 var
   FieldItem: TTreeViewItem;
 begin
@@ -226,7 +226,7 @@ begin
   RefreshFormCaption;
 end;
 
-procedure TForm1.btnFieldOkClick(Sender: TObject);
+procedure TfrmMain.btnFieldOkClick(Sender: TObject);
 begin
   edtFieldName.Text := edtFieldName.Text.trim;
   if edtFieldName.Text.IsEmpty then
@@ -264,12 +264,12 @@ begin
   RefreshFormCaption;
 end;
 
-procedure TForm1.btnMessageCancelClick(Sender: TObject);
+procedure TfrmMain.btnMessageCancelClick(Sender: TObject);
 begin
   InitEditMessageTab;
 end;
 
-procedure TForm1.btnMessageDeleteClick(Sender: TObject);
+procedure TfrmMain.btnMessageDeleteClick(Sender: TObject);
 var
   MessageItem: TTreeViewItem;
 begin
@@ -292,7 +292,7 @@ begin
   RefreshFormCaption;
 end;
 
-procedure TForm1.btnMessageOkClick(Sender: TObject);
+procedure TfrmMain.btnMessageOkClick(Sender: TObject);
 begin
   edtMessageName.Text := edtMessageName.Text.trim;
   if edtMessageName.Text.IsEmpty then
@@ -321,7 +321,7 @@ begin
   RefreshFormCaption;
 end;
 
-procedure TForm1.btnNewFieldClick(Sender: TObject);
+procedure TfrmMain.btnNewFieldClick(Sender: TObject);
 var
   msg: TMessage;
   fld: TMessageField;
@@ -372,7 +372,7 @@ begin
   RefreshFormCaption;
 end;
 
-procedure TForm1.btnNewMessageClick(Sender: TObject);
+procedure TfrmMain.btnNewMessageClick(Sender: TObject);
 var
   msg: TMessage;
   MessageItem: TTreeViewItem;
@@ -396,12 +396,12 @@ begin
   RefreshFormCaption;
 end;
 
-procedure TForm1.btnProjectCancelClick(Sender: TObject);
+procedure TfrmMain.btnProjectCancelClick(Sender: TObject);
 begin
   InitEditProjectTab;
 end;
 
-procedure TForm1.btnProjectOkClick(Sender: TObject);
+procedure TfrmMain.btnProjectOkClick(Sender: TObject);
 begin
   edtProjectName.Text := edtProjectName.Text.trim;
   if edtProjectName.Text.IsEmpty then
@@ -448,7 +448,7 @@ begin
   RefreshFormCaption;
 end;
 
-procedure TForm1.edtFieldDelphiFieldTypeChange(Sender: TObject);
+procedure TfrmMain.edtFieldDelphiFieldTypeChange(Sender: TObject);
 begin
   if (edtFieldDelphiFieldType.Text.tolower = 'string') then
   begin
@@ -458,19 +458,19 @@ begin
   end;
 end;
 
-procedure TForm1.edtFieldNameChange(Sender: TObject);
+procedure TfrmMain.edtFieldNameChange(Sender: TObject);
 begin
   edtFieldDelphiFieldName.TextPrompt := CurrentField.DefaultDelphiFieldName
     (edtFieldName.Text);
 end;
 
-procedure TForm1.edtMessageNameChange(Sender: TObject);
+procedure TfrmMain.edtMessageNameChange(Sender: TObject);
 begin
   edtMessageDelphiClassName.TextPrompt := CurrentMessage.DefaultDelphiClassName
     (edtMessageName.Text);
 end;
 
-procedure TForm1.edtProjectNameChange(Sender: TObject);
+procedure TfrmMain.edtProjectNameChange(Sender: TObject);
 begin
   edtProjectDelphiUnitName.TextPrompt := CurrentProject.DefaultDelphiUnitName
     (edtProjectName.Text);
@@ -480,12 +480,12 @@ begin
     CurrentProject.DefaultDelphiClientClassName(edtProjectName.Text);
 end;
 
-procedure TForm1.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+procedure TfrmMain.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
 begin
   mnuCloseClick(Sender);
 end;
 
-procedure TForm1.FormCreate(Sender: TObject);
+procedure TfrmMain.FormCreate(Sender: TObject);
 begin
   FCurrentProject := nil;
   FCurrentScreen := TSMGScreen.None;
@@ -509,13 +509,13 @@ begin
   CurrentScreen := TSMGScreen.Home;
 end;
 
-procedure TForm1.FormDestroy(Sender: TObject);
+procedure TfrmMain.FormDestroy(Sender: TObject);
 begin
   if assigned(CurrentProject) then
     FreeAndNil(CurrentProject);
 end;
 
-procedure TForm1.InitEditFieldTab;
+procedure TfrmMain.InitEditFieldTab;
 begin
   if not assigned(CurrentField) then
     raise Exception.Create('No field to display !');
@@ -553,7 +553,7 @@ begin
     end);
 end;
 
-procedure TForm1.InitEditMessageTab;
+procedure TfrmMain.InitEditMessageTab;
 begin
   if not assigned(CurrentMessage) then
     raise Exception.Create('No message to display !');
@@ -581,7 +581,7 @@ begin
     end);
 end;
 
-procedure TForm1.InitEditProjectTab;
+procedure TfrmMain.InitEditProjectTab;
 begin
   if not assigned(CurrentProject) then
     raise Exception.Create('No project to display !');
@@ -623,12 +623,12 @@ begin
     end);
 end;
 
-procedure TForm1.InitHomeScreen;
+procedure TfrmMain.InitHomeScreen;
 begin
   RefreshFormCaption;
 end;
 
-procedure TForm1.InitProjectScreen;
+procedure TfrmMain.InitProjectScreen;
 var
   msg: TMessage;
   fld: TMessageField;
@@ -667,12 +667,12 @@ begin
   RefreshFormCaption;
 end;
 
-procedure TForm1.mnuAboutClick(Sender: TObject);
+procedure TfrmMain.mnuAboutClick(Sender: TObject);
 begin
   OlfAboutDialog1.Execute;
 end;
 
-procedure TForm1.mnuCloseClick(Sender: TObject);
+procedure TfrmMain.mnuCloseClick(Sender: TObject);
 begin
   if not assigned(CurrentProject) then
     exit;
@@ -696,7 +696,7 @@ begin
   end;
 end;
 
-procedure TForm1.mnuDelphiExportClick(Sender: TObject);
+procedure TfrmMain.mnuDelphiExportClick(Sender: TObject);
 begin
   ExportSaveDialog.DefaultExt := 'pas';
   ExportSaveDialog.Filter := 'Pascal file|*.pas';
@@ -725,7 +725,7 @@ begin
   end;
 end;
 
-procedure TForm1.mnuNewFileClick(Sender: TObject);
+procedure TfrmMain.mnuNewFileClick(Sender: TObject);
 begin
   mnuCloseClick(Sender);
 
@@ -734,7 +734,7 @@ begin
   CurrentScreen := TSMGScreen.Project;
 end;
 
-procedure TForm1.mnuOpenFileClick(Sender: TObject);
+procedure TfrmMain.mnuOpenFileClick(Sender: TObject);
 begin
   mnuCloseClick(Sender);
 
@@ -753,18 +753,18 @@ begin
   end;
 end;
 
-procedure TForm1.mnuOptionsClick(Sender: TObject);
+procedure TfrmMain.mnuOptionsClick(Sender: TObject);
 begin
   ShowMessage('No settings for now.');
   // TODO : à compléter
 end;
 
-procedure TForm1.mnuQuitClick(Sender: TObject);
+procedure TfrmMain.mnuQuitClick(Sender: TObject);
 begin
   close;
 end;
 
-procedure TForm1.mnuSaveClick(Sender: TObject);
+procedure TfrmMain.mnuSaveClick(Sender: TObject);
 begin
   if not assigned(CurrentProject) then
     exit;
@@ -789,12 +789,12 @@ begin
   end;
 end;
 
-procedure TForm1.OlfAboutDialog1URLClick(const AURL: string);
+procedure TfrmMain.OlfAboutDialog1URLClick(const AURL: string);
 begin
   url_Open_In_Browser(AURL);
 end;
 
-procedure TForm1.RefreshFormCaption;
+procedure TfrmMain.RefreshFormCaption;
 begin
   caption := OlfAboutDialog1.Titre + ' ' + OlfAboutDialog1.VersionNumero;
 {$IFDEF DEBUG}
@@ -808,7 +808,7 @@ begin
   end;
 end;
 
-procedure TForm1.SetCurrentScreen(const Value: TSMGScreen);
+procedure TfrmMain.SetCurrentScreen(const Value: TSMGScreen);
 begin
   if FCurrentScreen = Value then
     exit;
@@ -833,25 +833,25 @@ begin
   UpdateButtonsAndMenus;
 end;
 
-procedure TForm1.SetCurrentField(const Value: TMessageField);
+procedure TfrmMain.SetCurrentField(const Value: TMessageField);
 begin
   FCurrentField := Value;
   InitEditFieldTab;
 end;
 
-procedure TForm1.SetCurrentMessage(const Value: TMessage);
+procedure TfrmMain.SetCurrentMessage(const Value: TMessage);
 begin
   FCurrentMessage := Value;
   InitEditMessageTab;
 end;
 
-procedure TForm1.SetCurrentProject(const Value: TProject);
+procedure TfrmMain.SetCurrentProject(const Value: TProject);
 begin
   FCurrentProject := Value;
   InitEditProjectTab;
 end;
 
-procedure TForm1.tvProjectChange(Sender: TObject);
+procedure TfrmMain.tvProjectChange(Sender: TObject);
 begin
   if assigned(tvProject.tagobject) then
   begin
@@ -893,7 +893,7 @@ begin
     (tvProject.Selected.tag in [1, 2]);
 end;
 
-procedure TForm1.UpdateButtonsAndMenus;
+procedure TfrmMain.UpdateButtonsAndMenus;
 begin
   mnuSave.Enabled := assigned(CurrentProject);
   mnuClose.Enabled := assigned(CurrentProject);
