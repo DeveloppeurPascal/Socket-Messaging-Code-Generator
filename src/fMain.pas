@@ -131,6 +131,7 @@ type
     rbFieldStreamTODO: TRadioButton;
     cbMessageGenerate: TCheckBox;
     cbFieldGenerate: TCheckBox;
+    rbFieldStreamBitmap: TRadioButton;
     procedure FormCreate(Sender: TObject);
     procedure mnuQuitClick(Sender: TObject);
     procedure mnuAboutClick(Sender: TObject);
@@ -256,6 +257,8 @@ begin
       TDelphiFieldStreamFormat.ClassLoadFromStreamSaveToStream
   else if rbFieldStreamString.IsChecked then
     CurrentField.DelphiFieldStreamFormat := TDelphiFieldStreamFormat.RWString
+  else if rbFieldStreamBitmap.IsChecked then
+    CurrentField.DelphiFieldStreamFormat := TDelphiFieldStreamFormat.RWBitmap
   else if rbFieldStreamTODO.IsChecked then
     CurrentField.DelphiFieldStreamFormat := TDelphiFieldStreamFormat.TODO;
 
@@ -453,8 +456,16 @@ begin
   if (edtFieldDelphiFieldType.Text.tolower = 'string') then
   begin
     rbFieldStreamString.IsChecked := true;
-    if edtFieldDefaultValue.Text.IsEmpty then
+    if edtFieldDefaultValue.Text.IsEmpty or (edtFieldDefaultValue.Text = '0') or
+      (edtFieldDefaultValue.Text = 'nil') then
       edtFieldDefaultValue.Text := '''''';
+  end;
+  if (edtFieldDelphiFieldType.Text.tolower = 'tbitmap') then
+  begin
+    rbFieldStreamBitmap.IsChecked := true;
+    if edtFieldDefaultValue.Text.IsEmpty or (edtFieldDefaultValue.Text = '0') or
+      (edtFieldDefaultValue.Text = '''''') then
+      edtFieldDefaultValue.Text := 'nil';
   end;
 end;
 
@@ -541,6 +552,8 @@ begin
     TDelphiFieldStreamFormat.ClassLoadFromStreamSaveToStream;
   rbFieldStreamString.IsChecked := CurrentField.DelphiFieldStreamFormat =
     TDelphiFieldStreamFormat.RWString;
+  rbFieldStreamBitmap.IsChecked := CurrentField.DelphiFieldStreamFormat =
+    TDelphiFieldStreamFormat.RWBitmap;
   rbFieldStreamTODO.IsChecked := CurrentField.DelphiFieldStreamFormat =
     TDelphiFieldStreamFormat.TODO;
 

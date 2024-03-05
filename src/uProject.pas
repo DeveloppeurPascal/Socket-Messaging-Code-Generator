@@ -20,7 +20,7 @@ type
   TProject = class;
 
   TDelphiFieldStreamFormat = (TODO, RWSizeOf, RWString,
-    ClassLoadFromStreamSaveToStream);
+    ClassLoadFromStreamSaveToStream, RWBitmap);
 
   TMessageField = class
   private
@@ -216,7 +216,8 @@ implementation
 uses
 {$IF Defined(FRAMEWORK_VCL)}
   VCL.Forms,
-{$ELSE}
+{$ENDIF}
+{$IF Defined(FRAMEWORK_FMX)}
   FMX.Forms,
 {$ENDIF}
   System.Classes,
@@ -790,6 +791,9 @@ begin
             TDelphiFieldStreamFormat.ClassLoadFromStreamSaveToStream:
               Result := Result + '  F' + fld.DelphiFieldName +
                 '.LoadFromStream(Stream);' + sLineBreak;
+            TDelphiFieldStreamFormat.RWBitmap:
+              Result := Result + '  F' + fld.DelphiFieldName +
+                ' := LoadBitmapFromStream(Stream);' + sLineBreak;
           else
             Result := Result + '// TODO : Load "F' + fld.DelphiFieldName +
               '" from the stream "Stream"' + sLineBreak;
@@ -816,6 +820,9 @@ begin
             TDelphiFieldStreamFormat.ClassLoadFromStreamSaveToStream:
               Result := Result + '  F' + fld.DelphiFieldName +
                 '.SaveToStream(Stream);' + sLineBreak;
+            TDelphiFieldStreamFormat.RWBitmap:
+              Result := Result + '  SaveBitmapToStream(F' + fld.DelphiFieldName
+                + ', Stream);' + sLineBreak;
           else
             Result := Result + '// TODO : Save "F' + fld.DelphiFieldName +
               '" to the stream "Stream"' + sLineBreak;
@@ -1107,20 +1114,24 @@ end;
 function TProject.GetAsDelphi: string;
 var
   i, j: integer;
-  NeedOlfRTLStreamsUnit: boolean;
+  HasAStringField, HasABitmapField: boolean;
 begin
-  NeedOlfRTLStreamsUnit := false;
+  HasAStringField := false;
+  HasABitmapField := false;
   for i := 0 to Messages.Count - 1 do
   begin
     for j := 0 to Messages[i].Fields.Count - 1 do
     begin
-      NeedOlfRTLStreamsUnit :=
+      HasAStringField := HasAStringField or
         (Messages[i].Fields[j].DelphiFieldStreamFormat =
         TDelphiFieldStreamFormat.RWString);
-      if NeedOlfRTLStreamsUnit then
+      HasABitmapField := HasABitmapField or
+        (Messages[i].Fields[j].DelphiFieldStreamFormat =
+        TDelphiFieldStreamFormat.RWBitmap);
+      if HasAStringField and HasABitmapField then
         break;
     end;
-    if NeedOlfRTLStreamsUnit then
+    if HasAStringField and HasABitmapField then
       break;
   end;
   Messages.SortByDelphiClassName;
@@ -1164,6 +1175,15 @@ begin
   Result := Result + 'uses' + sLineBreak;
   if not DelphiUnitsUsed.IsEmpty then
     Result := Result + '  ' + DelphiUnitsUsed + ',' + sLineBreak;
+  if HasABitmapField then
+  begin
+    Result := Result + '{$IFDEF FRAMEWORK_VCL}' + sLineBreak;
+    Result := Result + '  VCL.Graphics,' + sLineBreak;
+    Result := Result + '{$ENDIF}' + sLineBreak;
+    Result := Result + '{$IFDEF FRAMEWORK_FMX}' + sLineBreak;
+    Result := Result + '  FMX.Graphics,' + sLineBreak;
+    Result := Result + '{$ENDIF}' + sLineBreak;
+  end;
   Result := Result + '  System.Classes,' + sLineBreak;
   Result := Result + '  Olf.Net.Socket.Messaging;' + sLineBreak;
   Result := Result + sLineBreak;
@@ -1243,13 +1263,12 @@ begin
   Result := Result + 'uses' + sLineBreak;
   Result := Result + '  System.SysUtils;' + sLineBreak;
   Result := Result + sLineBreak;
-{$REGION 'Olf.RTLVersion.Streams'}
-  if NeedOlfRTLStreamsUnit then
+{$REGION 'Streams pour "string"'}
+  if HasAStringField then
   begin
     // From unit Olf.RTL.Streams.pas in repository :
     // https://github.com/DeveloppeurPascal/librairies
-    Result := Result + '{$REGION ''code from Olf.RTLVersion.Streams''}' +
-      sLineBreak;
+    Result := Result + '{$REGION ''code from Olf.RTL.Streams''}' + sLineBreak;
     Result := Result + sLineBreak;
     Result := Result +
       'procedure SaveStringToStream(AString: string; AStream: TStream;' +
@@ -1332,6 +1351,93 @@ begin
     Result := Result + 'begin' + sLineBreak;
     Result := Result +
       '  result := LoadStringFromStream(AStream, TEncoding.UTF8);' + sLineBreak;
+    Result := Result + 'end;' + sLineBreak;
+    Result := Result + sLineBreak;
+    Result := Result + '{$ENDREGION}' + sLineBreak;
+    Result := Result + sLineBreak;
+  end;
+{$ENDREGION}
+{$REGION 'Streams pour TBitmap de VCL et FMX'}
+  if HasABitmapField then
+  begin
+    // From unit Olf.VCL.Streams.pas and Olf.FMX.Streams.pas in repository :
+    // https://github.com/DeveloppeurPascal/librairies
+    Result := Result +
+      '{$REGION ''code from Olf.VCL.Streams and Olf.FMX.Streams for saving/loading a TBitmap in a stream with other things in it''}'
+      + sLineBreak;
+    Result := Result + sLineBreak;
+    Result := Result +
+      'procedure SaveBitmapToStream(ABitmap: TBitmap; AToStream: TStream);' +
+      sLineBreak;
+    Result := Result + '// From unit Olf.FMX.Streams.pas in repository :' +
+      sLineBreak;
+    Result := Result + '// https://github.com/DeveloppeurPascal/librairies' +
+      sLineBreak;
+    Result := Result + 'var' + sLineBreak;
+    Result := Result + '  ms: TMemoryStream;' + sLineBreak;
+    Result := Result + '  size: int64;' + sLineBreak;
+    Result := Result + 'begin' + sLineBreak;
+    Result := Result + '  if not assigned(AToStream) then' + sLineBreak;
+    Result := Result +
+      '    raise exception.create(''Need an existing stream to save the bitmap !'');'
+      + sLineBreak;
+    Result := Result + '' + sLineBreak;
+    Result := Result + '  if not assigned(ABitmap) then' + sLineBreak;
+    Result := Result + '  begin' + sLineBreak;
+    Result := Result + '    size := 0;' + sLineBreak;
+    Result := Result + '    AToStream.WriteData(size);' + sLineBreak;
+    Result := Result + '  end' + sLineBreak;
+    Result := Result + '  else' + sLineBreak;
+    Result := Result + '  begin' + sLineBreak;
+    Result := Result + '    ms := TMemoryStream.create;' + sLineBreak;
+    Result := Result + '    try' + sLineBreak;
+    Result := Result + '      ABitmap.SaveToStream(ms);' + sLineBreak;
+    Result := Result + '      size := ms.size;' + sLineBreak;
+    Result := Result + '      AToStream.WriteData(size);' + sLineBreak;
+    Result := Result + '      if (size > 0) then' + sLineBreak;
+    Result := Result + '      begin' + sLineBreak;
+    Result := Result + '        ms.Position := 0;' + sLineBreak;
+    Result := Result + '        AToStream.CopyFrom(ms, size);' + sLineBreak;
+    Result := Result + '      end;' + sLineBreak;
+    Result := Result + '    finally' + sLineBreak;
+    Result := Result + '      ms.free;' + sLineBreak;
+    Result := Result + '    end;' + sLineBreak;
+    Result := Result + '  end;' + sLineBreak;
+    Result := Result + 'end;' + sLineBreak;
+    Result := Result + '' + sLineBreak;
+    Result := Result +
+      'function LoadBitmapFromStream(AFromStream: TStream): TBitmap;' +
+      sLineBreak;
+    Result := Result + '// From unit Olf.FMX.Streams.pas in repository :' +
+      sLineBreak;
+    Result := Result + '// https://github.com/DeveloppeurPascal/librairies' +
+      sLineBreak;
+    Result := Result + 'var' + sLineBreak;
+    Result := Result + '  ms: TMemoryStream;' + sLineBreak;
+    Result := Result + '  size: int64;' + sLineBreak;
+    Result := Result + 'begin' + sLineBreak;
+    Result := Result + '  if not assigned(AFromStream) then' + sLineBreak;
+    Result := Result +
+      '    raise exception.create(''Need an existing stream to load the bitmap !'');'
+      + sLineBreak;
+    Result := Result + '' + sLineBreak;
+    Result := Result + '  if (AFromStream.ReadData(size) <> sizeof(size)) then'
+      + sLineBreak;
+    Result := Result + '    result := nil' + sLineBreak;
+    Result := Result + '  else if (size < 1) then' + sLineBreak;
+    Result := Result + '    result := nil' + sLineBreak;
+    Result := Result + '  else' + sLineBreak;
+    Result := Result + '  begin' + sLineBreak;
+    Result := Result + '    ms := TMemoryStream.create;' + sLineBreak;
+    Result := Result + '    try' + sLineBreak;
+    Result := Result + '      ms.CopyFrom(AFromStream, size);' + sLineBreak;
+    Result := Result + '      ms.Position := 0;' + sLineBreak;
+    Result := Result + '      result := TBitmap.create;' + sLineBreak;
+    Result := Result + '      result.LoadFromStream(ms);' + sLineBreak;
+    Result := Result + '    finally' + sLineBreak;
+    Result := Result + '      ms.free;' + sLineBreak;
+    Result := Result + '    end;' + sLineBreak;
+    Result := Result + '  end;' + sLineBreak;
     Result := Result + 'end;' + sLineBreak;
     Result := Result + sLineBreak;
     Result := Result + '{$ENDREGION}' + sLineBreak;

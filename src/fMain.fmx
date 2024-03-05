@@ -1039,7 +1039,7 @@ object frmMain: TfrmMain
             Margins.Right = 10.000000000000000000
             Margins.Bottom = 5.000000000000000000
             Position.X = 10.000000000000000000
-            Position.Y = 430.000000000000000000
+            Position.Y = 460.000000000000000000
             Size.Width = 543.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
@@ -1056,7 +1056,7 @@ object frmMain: TfrmMain
             Margins.Right = 10.000000000000000000
             Margins.Bottom = 10.000000000000000000
             Position.X = 10.000000000000000000
-            Position.Y = 457.000000000000000000
+            Position.Y = 487.000000000000000000
             Size.Width = 543.000000000000000000
             Size.Height = 100.000000000000000000
             Size.PlatformDefault = False
@@ -1066,7 +1066,7 @@ object frmMain: TfrmMain
           end
           object GridPanelLayout3: TGridPanelLayout
             Align = Top
-            Position.Y = 606.000000000000000000
+            Position.Y = 636.000000000000000000
             Size.Width = 563.000000000000000000
             Size.Height = 136.000000000000000000
             Size.PlatformDefault = False
@@ -1169,7 +1169,7 @@ object frmMain: TfrmMain
             Position.X = 10.000000000000000000
             Position.Y = 350.000000000000000000
             Size.Width = 543.000000000000000000
-            Size.Height = 60.000000000000000000
+            Size.Height = 90.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 10
             ColumnCollection = <
@@ -1199,13 +1199,21 @@ object frmMain: TfrmMain
                 Column = 1
                 Control = rbFieldStreamTODO
                 Row = 1
+              end
+              item
+                Column = 0
+                Control = rbFieldStreamBitmap
+                Row = 2
               end>
             RowCollection = <
               item
-                Value = 50.000000000000000000
+                Value = 34.000000000000000000
               end
               item
-                Value = 50.000000000000000000
+                Value = 33.000000000000000000
+              end
+              item
+                Value = 33.000000000000000000
               end>
             object rbFieldStreamSizeOf: TRadioButton
               Align = Client
@@ -1215,7 +1223,7 @@ object frmMain: TfrmMain
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
               Size.Width = 261.500000000000000000
-              Size.Height = 20.000000000000000000
+              Size.Height = 20.600000381469730000
               Size.PlatformDefault = False
               TabOrder = 0
               Text = 'Read/Write (sizeof)'
@@ -1228,7 +1236,7 @@ object frmMain: TfrmMain
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
               Size.Width = 261.500000000000000000
-              Size.Height = 20.000000000000000000
+              Size.Height = 20.600000381469730000
               Size.PlatformDefault = False
               TabOrder = 1
               Text = 'Class with LoadFromStream/SaveToStream'
@@ -1241,9 +1249,9 @@ object frmMain: TfrmMain
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
               Size.Width = 261.500000000000000000
-              Size.Height = 20.000000000000000000
+              Size.Height = 19.700004577636720000
               Size.PlatformDefault = False
-              TabOrder = 2
+              TabOrder = 3
               Text = 'Read/Write for string'
             end
             object rbFieldStreamTODO: TRadioButton
@@ -1254,10 +1262,23 @@ object frmMain: TfrmMain
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
               Size.Width = 261.500000000000000000
-              Size.Height = 20.000000000000000000
+              Size.Height = 19.700004577636720000
               Size.PlatformDefault = False
-              TabOrder = 3
+              TabOrder = 4
               Text = 'Other (generate TODOs)'
+            end
+            object rbFieldStreamBitmap: TRadioButton
+              Align = Client
+              GroupName = 'FDST'
+              Margins.Left = 5.000000000000000000
+              Margins.Top = 5.000000000000000000
+              Margins.Right = 5.000000000000000000
+              Margins.Bottom = 5.000000000000000000
+              Size.Width = 261.500000000000000000
+              Size.Height = 19.699996948242190000
+              Size.PlatformDefault = False
+              TabOrder = 2
+              Text = 'Read/Write for TBitmap'
             end
           end
           object cbFieldGenerate: TCheckBox
@@ -1267,7 +1288,7 @@ object frmMain: TfrmMain
             Margins.Right = 10.000000000000000000
             Margins.Bottom = 10.000000000000000000
             Position.X = 10.000000000000000000
-            Position.Y = 577.000000000000000000
+            Position.Y = 607.000000000000000000
             Size.Width = 543.000000000000000000
             Size.Height = 19.000000000000000000
             Size.PlatformDefault = False
