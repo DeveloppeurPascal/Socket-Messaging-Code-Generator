@@ -121,6 +121,7 @@ object Form1: TForm1
         Size.PlatformDefault = False
         TabOrder = 0
         Text = 'New project'
+        TextSettings.Trimming = None
         OnClick = mnuNewFileClick
       end
       object btnOpenProjectFile: TButton
@@ -136,6 +137,7 @@ object Form1: TForm1
         Size.PlatformDefault = False
         TabOrder = 1
         Text = 'Open project'
+        TextSettings.Trimming = None
         OnClick = mnuOpenFileClick
       end
     end
@@ -179,6 +181,7 @@ object Form1: TForm1
         CustomIcon = <
           item
           end>
+        TextSettings.Trimming = None
         IsSelected = False
         Size.Width = 84.000000000000000000
         Size.Height = 26.000000000000000000
@@ -207,6 +210,7 @@ object Form1: TForm1
             Size.Width = 527.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Project description'
             TabOrder = 12
           end
@@ -237,6 +241,7 @@ object Form1: TForm1
             Size.Width = 527.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Project name'
             TabOrder = 0
           end
@@ -251,6 +256,7 @@ object Form1: TForm1
             Size.Width = 527.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Delphi unit name'
             TabOrder = 2
           end
@@ -352,6 +358,7 @@ object Form1: TForm1
               Size.PlatformDefault = False
               TabOrder = 0
               Text = 'Ok'
+              TextSettings.Trimming = None
               OnClick = btnProjectOkClick
             end
             object btnProjectCancel: TButton
@@ -365,6 +372,7 @@ object Form1: TForm1
               Size.PlatformDefault = False
               TabOrder = 1
               Text = 'Cancel'
+              TextSettings.Trimming = None
               OnClick = btnProjectCancelClick
             end
             object btnProjectSave: TButton
@@ -378,6 +386,7 @@ object Form1: TForm1
               Size.PlatformDefault = False
               TabOrder = 2
               Text = 'Save the project'
+              TextSettings.Trimming = None
               OnClick = mnuSaveClick
             end
             object btnExportDelphiUnit: TButton
@@ -391,6 +400,7 @@ object Form1: TForm1
               Size.PlatformDefault = False
               TabOrder = 3
               Text = 'Export Delphi unit'
+              TextSettings.Trimming = None
               OnClick = mnuDelphiExportClick
             end
             object btnProjectClose: TButton
@@ -404,6 +414,7 @@ object Form1: TForm1
               Size.PlatformDefault = False
               TabOrder = 4
               Text = 'Close the project'
+              TextSettings.Trimming = None
               OnClick = mnuCloseClick
             end
           end
@@ -418,6 +429,7 @@ object Form1: TForm1
             Size.Width = 527.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Delphi client class name'
             TabOrder = 8
           end
@@ -441,6 +453,7 @@ object Form1: TForm1
               Size.Width = 10.000000000000000000
               Size.Height = 22.000000000000000000
               Size.PlatformDefault = False
+              TextSettings.Trimming = None
               Text = 'T'
               TabOrder = 0
             end
@@ -456,6 +469,7 @@ object Form1: TForm1
             Size.Width = 527.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Delphi server class name'
             TabOrder = 6
           end
@@ -479,6 +493,7 @@ object Form1: TForm1
               Size.Width = 10.000000000000000000
               Size.Height = 22.000000000000000000
               Size.PlatformDefault = False
+              TextSettings.Trimming = None
               Text = 'T'
               TabOrder = 0
             end
@@ -494,6 +509,7 @@ object Form1: TForm1
             Size.Width = 527.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Delphi units needed (types declarations used by fields)'
             TabOrder = 4
           end
@@ -523,6 +539,7 @@ object Form1: TForm1
             Size.Width = 527.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Delphi message class name template'
             TabOrder = 10
           end
@@ -543,6 +560,7 @@ object Form1: TForm1
               Size.Width = 10.000000000000000000
               Size.Height = 25.000000000000000000
               Size.PlatformDefault = False
+              TextSettings.Trimming = None
               Text = 'T'
               TabOrder = 0
             end
@@ -563,6 +581,7 @@ object Form1: TForm1
               Size.Height = 25.000000000000000000
               Size.PlatformDefault = False
               TextSettings.HorzAlign = Center
+              TextSettings.Trimming = None
               Text = 'MessageClassName'
               TabOrder = 2
             end
@@ -584,6 +603,7 @@ object Form1: TForm1
         CustomIcon = <
           item
           end>
+        TextSettings.Trimming = None
         IsSelected = False
         Size.Width = 94.000000000000000000
         Size.Height = 26.000000000000000000
@@ -612,6 +632,7 @@ object Form1: TForm1
             Size.Width = 543.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Message name'
             TabOrder = 1
           end
@@ -642,6 +663,7 @@ object Form1: TForm1
             Size.Width = 543.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Delphi class name'
             TabOrder = 3
           end
@@ -665,6 +687,7 @@ object Form1: TForm1
               Size.Width = 10.000000000000000000
               Size.Height = 22.000000000000000000
               Size.PlatformDefault = False
+              TextSettings.Trimming = None
               Text = 'T'
               TabOrder = 0
             end
@@ -680,6 +703,7 @@ object Form1: TForm1
             Size.Width = 543.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Message description'
             TabOrder = 5
           end
@@ -749,6 +773,7 @@ object Form1: TForm1
               Size.PlatformDefault = False
               TabOrder = 0
               Text = 'Ok'
+              TextSettings.Trimming = None
               OnClick = btnMessageOkClick
             end
             object btnMessageCancel: TButton
@@ -762,6 +787,7 @@ object Form1: TForm1
               Size.PlatformDefault = False
               TabOrder = 1
               Text = 'Cancel'
+              TextSettings.Trimming = None
               OnClick = btnMessageCancelClick
             end
             object btnMessageDelete: TButton
@@ -775,6 +801,7 @@ object Form1: TForm1
               Size.PlatformDefault = False
               TabOrder = 2
               Text = 'Delete this message'
+              TextSettings.Trimming = None
               OnClick = btnMessageDeleteClick
             end
           end
@@ -817,6 +844,7 @@ object Form1: TForm1
             Size.Width = 543.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'lblMessageID'
             TabOrder = 0
           end
@@ -826,6 +854,7 @@ object Form1: TForm1
         CustomIcon = <
           item
           end>
+        TextSettings.Trimming = None
         IsSelected = True
         Size.Width = 73.000000000000000000
         Size.Height = 26.000000000000000000
@@ -854,6 +883,7 @@ object Form1: TForm1
             Size.Width = 543.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'lblMessageID'
             TabOrder = 0
           end
@@ -868,6 +898,7 @@ object Form1: TForm1
             Size.Width = 543.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Field name'
             TabOrder = 1
           end
@@ -898,6 +929,7 @@ object Form1: TForm1
             Size.Width = 543.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Default value (used in the message constructor)'
             TabOrder = 7
           end
@@ -927,6 +959,7 @@ object Form1: TForm1
             Size.Width = 543.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Delphi field type'
             TabOrder = 5
           end
@@ -943,6 +976,7 @@ object Form1: TForm1
             Size.Width = 543.000000000000000000
             Size.Height = 22.000000000000000000
             Size.PlatformDefault = False
+            OnChange = edtFieldDelphiFieldTypeChange
           end
           object lblFieldDelphiFieldName: TLabel
             Align = Top
@@ -955,6 +989,7 @@ object Form1: TForm1
             Size.Width = 543.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Delphi field name'
             TabOrder = 3
           end
@@ -978,6 +1013,7 @@ object Form1: TForm1
               Size.Width = 10.000000000000000000
               Size.Height = 22.000000000000000000
               Size.PlatformDefault = False
+              TextSettings.Trimming = None
               Text = 'F'
               TabOrder = 0
             end
@@ -993,6 +1029,7 @@ object Form1: TForm1
             Size.Width = 543.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Field description'
             TabOrder = 11
           end
@@ -1062,6 +1099,7 @@ object Form1: TForm1
               Size.PlatformDefault = False
               TabOrder = 0
               Text = 'Ok'
+              TextSettings.Trimming = None
               OnClick = btnFieldOkClick
             end
             object btnFieldCancel: TButton
@@ -1075,6 +1113,7 @@ object Form1: TForm1
               Size.PlatformDefault = False
               TabOrder = 1
               Text = 'Cancel'
+              TextSettings.Trimming = None
               OnClick = btnFieldCancelClick
             end
             object btnFieldDelete: TButton
@@ -1088,6 +1127,7 @@ object Form1: TForm1
               Size.PlatformDefault = False
               TabOrder = 2
               Text = 'Delete this field'
+              TextSettings.Trimming = None
               OnClick = btnFieldDeleteClick
             end
           end
@@ -1102,6 +1142,7 @@ object Form1: TForm1
             Size.Width = 543.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Read/write method to use for streams'
             TabOrder = 9
           end
@@ -1240,6 +1281,7 @@ object Form1: TForm1
         Size.PlatformDefault = False
         TabOrder = 2
         Text = 'Add a field'
+        TextSettings.Trimming = None
         OnClick = btnNewFieldClick
       end
       object btnNewMessage: TButton
@@ -1254,6 +1296,7 @@ object Form1: TForm1
         Size.PlatformDefault = False
         TabOrder = 1
         Text = 'Add a message'
+        TextSettings.Trimming = None
         OnClick = btnNewMessageClick
       end
     end

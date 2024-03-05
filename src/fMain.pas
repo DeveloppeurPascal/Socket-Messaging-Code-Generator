@@ -155,6 +155,7 @@ type
     procedure btnFieldCancelClick(Sender: TObject);
     procedure btnFieldOkClick(Sender: TObject);
     procedure edtFieldNameChange(Sender: TObject);
+    procedure edtFieldDelphiFieldTypeChange(Sender: TObject);
   private
     FCurrentProject: TProject;
     FCurrentScreen: TSMGScreen;
@@ -440,6 +441,16 @@ begin
   CurrentProject.Description := edtProjectDescription.Text;
 
   RefreshFormCaption;
+end;
+
+procedure TForm1.edtFieldDelphiFieldTypeChange(Sender: TObject);
+begin
+  if (edtFieldDelphiFieldType.Text.tolower = 'string') then
+  begin
+    rbFieldStreamString.IsChecked := true;
+    if edtFieldDefaultValue.Text.IsEmpty then
+      edtFieldDefaultValue.Text := '''''';
+  end;
 end;
 
 procedure TForm1.edtFieldNameChange(Sender: TObject);
