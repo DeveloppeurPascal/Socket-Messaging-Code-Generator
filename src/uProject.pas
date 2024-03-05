@@ -1114,7 +1114,7 @@ begin
   Result := Result + '//' + sLineBreak;
   Result := Result + '// Direct link to the file :' + sLineBreak;
   Result := Result +
-    '// https://raw.githubusercontent.com/DeveloppeurPascal/Socket-Messaging-Library/main/src-library/Olf.Net.Socket.Messaging.pas'
+    '// https://raw.githubusercontent.com/DeveloppeurPascal/Socket-Messaging-Library/main/src/Olf.Net.Socket.Messaging.pas'
     + sLineBreak;
   Result := Result + sLineBreak;
   Result := Result + 'interface' + sLineBreak;
