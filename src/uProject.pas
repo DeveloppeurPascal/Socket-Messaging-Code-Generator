@@ -1097,7 +1097,7 @@ begin
   Result := Result + '// File generator : ' + application.MainForm.Caption +
     sLineBreak;
   Result := Result +
-    '// Website : https://socketmessaging.developpeur-pascal.fr/ ' + sLineBreak;
+    '// Website : https://smcodegenerator.olfsoftware.fr/ ' + sLineBreak;
   Result := Result + '// Generation date : ' + DateTimeToStr(now) + sLineBreak;
   Result := Result + '// ' + sLineBreak;
   Result := Result +
