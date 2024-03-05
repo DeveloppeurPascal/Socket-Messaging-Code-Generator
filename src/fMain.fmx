@@ -167,7 +167,7 @@ object Form1: TForm1
       Size.Width = 563.000000000000000000
       Size.Height = 813.000000000000000000
       Size.PlatformDefault = False
-      TabIndex = 1
+      TabIndex = 2
       TabOrder = 1
       TabPosition = PlatformDefault
       Sizes = (
@@ -604,7 +604,7 @@ object Form1: TForm1
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = True
+        IsSelected = False
         Size.Width = 94.000000000000000000
         Size.Height = 26.000000000000000000
         Size.PlatformDefault = False
@@ -869,7 +869,7 @@ object Form1: TForm1
           item
           end>
         TextSettings.Trimming = None
-        IsSelected = False
+        IsSelected = True
         Size.Width = 73.000000000000000000
         Size.Height = 26.000000000000000000
         Size.PlatformDefault = False
@@ -1066,11 +1066,11 @@ object Form1: TForm1
           end
           object GridPanelLayout3: TGridPanelLayout
             Align = Top
-            Position.Y = 567.000000000000000000
+            Position.Y = 606.000000000000000000
             Size.Width = 563.000000000000000000
             Size.Height = 136.000000000000000000
             Size.PlatformDefault = False
-            TabOrder = 13
+            TabOrder = 14
             ColumnCollection = <
               item
                 Value = 50.000000000000000000
@@ -1259,6 +1259,20 @@ object Form1: TForm1
               TabOrder = 3
               Text = 'Other (generate TODOs)'
             end
+          end
+          object cbFieldGenerate: TCheckBox
+            Align = Top
+            Margins.Left = 10.000000000000000000
+            Margins.Top = 10.000000000000000000
+            Margins.Right = 10.000000000000000000
+            Margins.Bottom = 10.000000000000000000
+            Position.X = 10.000000000000000000
+            Position.Y = 577.000000000000000000
+            Size.Width = 543.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 13
+            Text = 'Generate this field in exported message'
           end
         end
       end

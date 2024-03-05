@@ -32,6 +32,7 @@ type
     FDescription: string;
     FDelphiFieldType: string;
     FDelphiFieldStreamFormat: TDelphiFieldStreamFormat;
+    FGenerateTheField: boolean;
     procedure SetDefaultValue(const Value: string);
     procedure SetDelphiFieldName(const Value: string);
     procedure SetDelphiFieldType(const Value: string);
@@ -42,6 +43,7 @@ type
     function GetAsJSON: TJSONObject;
     function GetDelphiFieldName: string;
     procedure SetDelphiFieldStreamFormat(const Value: TDelphiFieldStreamFormat);
+    procedure SetGenerateTheField(const Value: boolean);
   protected
     procedure ValueChanged;
   public
@@ -56,6 +58,8 @@ type
       write SetDelphiFieldType;
     property DelphiFieldStreamFormat: TDelphiFieldStreamFormat
       read FDelphiFieldStreamFormat write SetDelphiFieldStreamFormat;
+    property GenerateTheField: boolean read FGenerateTheField
+      write SetGenerateTheField;
     property AsJSON: TJSONObject read GetAsJSON write SetAsJSON;
     constructor Create(AParent: TMessageFieldsList); virtual;
     function DefaultDelphiFieldName(AName: string = ''): string;
@@ -327,6 +331,7 @@ begin
   FDescription := '';
   FDelphiFieldType := '';
   FDelphiFieldStreamFormat := TDelphiFieldStreamFormat.RWSizeOf;
+  FGenerateTheField := true;
 end;
 
 function TMessageField.GetAsJSON: TJSONObject;
@@ -339,6 +344,7 @@ begin
   Result.AddPair('delphifieldtype', FDelphiFieldType);
   Result.AddPair('defaultvalue', FDefaultValue);
   Result.AddPair('dxstreamrw', ord(FDelphiFieldStreamFormat));
+  Result.AddPair('genfld', FGenerateTheField);
 end;
 
 function TMessageField.DefaultDelphiFieldName(AName: string): string;
@@ -381,6 +387,8 @@ begin
     FDelphiFieldStreamFormat := TDelphiFieldStreamFormat.RWSizeOf
   else
     FDelphiFieldStreamFormat := TDelphiFieldStreamFormat(i);
+  if not Value.TryGetValue<boolean>('genfld', FGenerateTheField) then
+    FGenerateTheField := true;
 end;
 
 procedure TMessageField.SetDefaultValue(const Value: string);
@@ -422,6 +430,14 @@ begin
     exit;
   ValueChanged;
   FDescription := Value;
+end;
+
+procedure TMessageField.SetGenerateTheField(const Value: boolean);
+begin
+  if (FGenerateTheField = Value) then
+    exit;
+  ValueChanged;
+  FGenerateTheField := Value;
 end;
 
 procedure TMessageField.SetName(const Value: string);
@@ -730,13 +746,14 @@ begin
       Result := Result + '  MessageID := ' + msg.MessageID.ToString + ';' +
         sLineBreak;
       for j := 0 to msg.Fields.Count - 1 do
-      begin
-        fld := msg.Fields[j];
-        if (fld.DefaultValue.IsEmpty) then
-        else
-          Result := Result + '  F' + fld.DelphiFieldName + ' := ' +
-            fld.DefaultValue + ';' + sLineBreak;
-      end;
+        if msg.Fields[j].GenerateTheField then
+        begin
+          fld := msg.Fields[j];
+          if (fld.DefaultValue.IsEmpty) then
+          else
+            Result := Result + '  F' + fld.DelphiFieldName + ' := ' +
+              fld.DefaultValue + ';' + sLineBreak;
+        end;
       Result := Result + 'end;' + sLineBreak;
       Result := Result + sLineBreak;
 
@@ -753,29 +770,31 @@ begin
       Result := Result + 'begin' + sLineBreak;
       Result := Result + '  inherited;' + sLineBreak;
       for j := 0 to msg.Fields.Count - 1 do
-      begin
-        fld := msg.Fields[j];
-        case fld.DelphiFieldStreamFormat of
-          TDelphiFieldStreamFormat.RWSizeOf:
-            begin
-              Result := Result + '  if (Stream.read(F' + fld.DelphiFieldName +
-                ', sizeof(F' + fld.DelphiFieldName + ')) <> sizeof(F' +
-                fld.DelphiFieldName + ')) then' + sLineBreak;
-              Result := Result + '    raise exception.Create(''Can''''t load "'
-                + fld.DelphiFieldName + '" value.'');' + sLineBreak;
-              // TODO : use Name instead of DelphiFieldName (or choose in the field editor)
-            end;
-          TDelphiFieldStreamFormat.RWString:
-            Result := Result + '  F' + fld.DelphiFieldName +
-              ' := LoadStringFromStream(Stream);' + sLineBreak;
-          TDelphiFieldStreamFormat.ClassLoadFromStreamSaveToStream:
-            Result := Result + '  F' + fld.DelphiFieldName +
-              '.LoadFromStream(Stream);' + sLineBreak;
-        else
-          Result := Result + '// TODO : Load "F' + fld.DelphiFieldName +
-            '" from the stream "Stream"' + sLineBreak;
+        if msg.Fields[j].GenerateTheField then
+        begin
+          fld := msg.Fields[j];
+          case fld.DelphiFieldStreamFormat of
+            TDelphiFieldStreamFormat.RWSizeOf:
+              begin
+                Result := Result + '  if (Stream.read(F' + fld.DelphiFieldName +
+                  ', sizeof(F' + fld.DelphiFieldName + ')) <> sizeof(F' +
+                  fld.DelphiFieldName + ')) then' + sLineBreak;
+                Result := Result +
+                  '    raise exception.Create(''Can''''t load "' +
+                  fld.DelphiFieldName + '" value.'');' + sLineBreak;
+                // TODO : use Name instead of DelphiFieldName (or choose in the field editor)
+              end;
+            TDelphiFieldStreamFormat.RWString:
+              Result := Result + '  F' + fld.DelphiFieldName +
+                ' := LoadStringFromStream(Stream);' + sLineBreak;
+            TDelphiFieldStreamFormat.ClassLoadFromStreamSaveToStream:
+              Result := Result + '  F' + fld.DelphiFieldName +
+                '.LoadFromStream(Stream);' + sLineBreak;
+          else
+            Result := Result + '// TODO : Load "F' + fld.DelphiFieldName +
+              '" from the stream "Stream"' + sLineBreak;
+          end;
         end;
-      end;
       Result := Result + 'end;' + sLineBreak;
       Result := Result + sLineBreak;
 
@@ -784,38 +803,40 @@ begin
       Result := Result + 'begin' + sLineBreak;
       Result := Result + '  inherited;' + sLineBreak;
       for j := 0 to msg.Fields.Count - 1 do
-      begin
-        fld := msg.Fields[j];
-        case fld.DelphiFieldStreamFormat of
-          TDelphiFieldStreamFormat.RWSizeOf:
-            Result := Result + '  Stream.Write(F' + fld.DelphiFieldName +
-              ', sizeof(F' + fld.DelphiFieldName + '));' + sLineBreak;
-          TDelphiFieldStreamFormat.RWString:
-            Result := Result + '  SaveStringToStream(F' + fld.DelphiFieldName +
-              ', Stream);' + sLineBreak;
-          TDelphiFieldStreamFormat.ClassLoadFromStreamSaveToStream:
-            Result := Result + '  F' + fld.DelphiFieldName +
-              '.SaveToStream(Stream);' + sLineBreak;
-        else
-          Result := Result + '// TODO : Save "F' + fld.DelphiFieldName +
-            '" to the stream "Stream"' + sLineBreak;
+        if msg.Fields[j].GenerateTheField then
+        begin
+          fld := msg.Fields[j];
+          case fld.DelphiFieldStreamFormat of
+            TDelphiFieldStreamFormat.RWSizeOf:
+              Result := Result + '  Stream.Write(F' + fld.DelphiFieldName +
+                ', sizeof(F' + fld.DelphiFieldName + '));' + sLineBreak;
+            TDelphiFieldStreamFormat.RWString:
+              Result := Result + '  SaveStringToStream(F' + fld.DelphiFieldName
+                + ', Stream);' + sLineBreak;
+            TDelphiFieldStreamFormat.ClassLoadFromStreamSaveToStream:
+              Result := Result + '  F' + fld.DelphiFieldName +
+                '.SaveToStream(Stream);' + sLineBreak;
+          else
+            Result := Result + '// TODO : Save "F' + fld.DelphiFieldName +
+              '" to the stream "Stream"' + sLineBreak;
+          end;
         end;
-      end;
       Result := Result + 'end;' + sLineBreak;
       Result := Result + sLineBreak;
 
       for j := 0 to msg.Fields.Count - 1 do
-      begin
-        fld := msg.Fields[j];
-        Result := Result + 'procedure T' + msg.DelphiClassName + '.Set' +
-          fld.DelphiFieldName + '(const Value: ' + fld.DelphiFieldType + ');' +
-          sLineBreak;
-        Result := Result + 'begin' + sLineBreak;
-        Result := Result + '  F' + fld.DelphiFieldName + ' := Value;' +
-          sLineBreak;
-        Result := Result + 'end;' + sLineBreak;
-        Result := Result + sLineBreak;
-      end;
+        if msg.Fields[j].GenerateTheField then
+        begin
+          fld := msg.Fields[j];
+          Result := Result + 'procedure T' + msg.DelphiClassName + '.Set' +
+            fld.DelphiFieldName + '(const Value: ' + fld.DelphiFieldType + ');'
+            + sLineBreak;
+          Result := Result + 'begin' + sLineBreak;
+          Result := Result + '  F' + fld.DelphiFieldName + ' := Value;' +
+            sLineBreak;
+          Result := Result + 'end;' + sLineBreak;
+          Result := Result + sLineBreak;
+        end;
       Result := Result + '{$ENDREGION}' + sLineBreak;
       Result := Result + sLineBreak;
     end;
@@ -849,39 +870,42 @@ begin
         + sLineBreak;
       Result := Result + '  private' + sLineBreak;
       for j := 0 to msg.Fields.Count - 1 do
-      begin
-        fld := msg.Fields[j];
-        Result := Result + '    F' + fld.DelphiFieldName + ': ' +
-          fld.DelphiFieldType + ';' + sLineBreak;
-      end;
+        if msg.Fields[j].GenerateTheField then
+        begin
+          fld := msg.Fields[j];
+          Result := Result + '    F' + fld.DelphiFieldName + ': ' +
+            fld.DelphiFieldType + ';' + sLineBreak;
+        end;
       for j := 0 to msg.Fields.Count - 1 do
-      begin
-        fld := msg.Fields[j];
-        Result := Result + '    procedure Set' + fld.DelphiFieldName +
-          '(const Value: ' + fld.DelphiFieldType + ');' + sLineBreak;
-      end;
+        if msg.Fields[j].GenerateTheField then
+        begin
+          fld := msg.Fields[j];
+          Result := Result + '    procedure Set' + fld.DelphiFieldName +
+            '(const Value: ' + fld.DelphiFieldType + ');' + sLineBreak;
+        end;
       Result := Result + '  public' + sLineBreak;
       for j := 0 to msg.Fields.Count - 1 do
-      begin
-        fld := msg.Fields[j];
-        if not fld.name.IsEmpty then
+        if msg.Fields[j].GenerateTheField then
         begin
-          Result := Result + '    /// <summary>' + sLineBreak;
-          Result := Result + WrapTextWithPrefix('    /// ', fld.name) +
-            sLineBreak;
-          Result := Result + '    /// </summary>' + sLineBreak;
+          fld := msg.Fields[j];
+          if not fld.name.IsEmpty then
+          begin
+            Result := Result + '    /// <summary>' + sLineBreak;
+            Result := Result + WrapTextWithPrefix('    /// ', fld.name) +
+              sLineBreak;
+            Result := Result + '    /// </summary>' + sLineBreak;
+          end;
+          if not fld.Description.IsEmpty then
+          begin
+            Result := Result + '    /// <remarks>' + sLineBreak;
+            Result := Result + WrapTextWithPrefix('    /// ', fld.Description) +
+              sLineBreak;
+            Result := Result + '    /// </remarks>' + sLineBreak;
+          end;
+          Result := Result + '    property ' + fld.DelphiFieldName + ': ' +
+            fld.DelphiFieldType + ' read F' + fld.DelphiFieldName + ' write Set'
+            + fld.DelphiFieldName + ';' + sLineBreak;
         end;
-        if not fld.Description.IsEmpty then
-        begin
-          Result := Result + '    /// <remarks>' + sLineBreak;
-          Result := Result + WrapTextWithPrefix('    /// ', fld.Description) +
-            sLineBreak;
-          Result := Result + '    /// </remarks>' + sLineBreak;
-        end;
-        Result := Result + '    property ' + fld.DelphiFieldName + ': ' +
-          fld.DelphiFieldType + ' read F' + fld.DelphiFieldName + ' write Set' +
-          fld.DelphiFieldName + ';' + sLineBreak;
-      end;
       Result := Result + '    constructor Create; override;' + sLineBreak;
       Result := Result +
         '    procedure LoadFromStream(Stream: TStream); override;' + sLineBreak;

@@ -130,6 +130,7 @@ type
     rbFieldStreamString: TRadioButton;
     rbFieldStreamTODO: TRadioButton;
     cbMessageGenerate: TCheckBox;
+    cbFieldGenerate: TCheckBox;
     procedure FormCreate(Sender: TObject);
     procedure mnuQuitClick(Sender: TObject);
     procedure mnuAboutClick(Sender: TObject);
@@ -257,6 +258,8 @@ begin
     CurrentField.DelphiFieldStreamFormat := TDelphiFieldStreamFormat.RWString
   else if rbFieldStreamTODO.IsChecked then
     CurrentField.DelphiFieldStreamFormat := TDelphiFieldStreamFormat.TODO;
+
+  CurrentField.GenerateTheField := cbFieldGenerate.IsChecked;
 
   RefreshFormCaption;
 end;
@@ -540,6 +543,8 @@ begin
     TDelphiFieldStreamFormat.RWString;
   rbFieldStreamTODO.IsChecked := CurrentField.DelphiFieldStreamFormat =
     TDelphiFieldStreamFormat.TODO;
+
+  cbFieldGenerate.IsChecked := CurrentField.GenerateTheField;
 
   tthread.ForceQueue(nil,
     procedure
