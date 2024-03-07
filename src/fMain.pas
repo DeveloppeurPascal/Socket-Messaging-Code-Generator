@@ -183,6 +183,7 @@ type
     procedure InitEditMessageTab;
     procedure InitEditFieldTab;
     procedure ExportTheUnit(AUnitFilePath: string);
+    procedure InitAboutDialogDescriptionAndLicense;
   public
     property CurrentProject: TProject read FCurrentProject
       write SetCurrentProject;
@@ -510,6 +511,8 @@ begin
   FCurrentScreen := TSMGScreen.None;
   tcProject.TabPosition := TTabPosition.None;
 
+  InitAboutDialogDescriptionAndLicense;
+
   // Window title
   RefreshFormCaption;
 
@@ -532,6 +535,17 @@ procedure TfrmMain.FormDestroy(Sender: TObject);
 begin
   if assigned(CurrentProject) then
     FreeAndNil(CurrentProject);
+end;
+
+procedure TfrmMain.InitAboutDialogDescriptionAndLicense;
+begin
+  OlfAboutDialog1.Licence.Text :=
+    'This program is distributed as shareware. If you use it (especially for ' +
+    'commercial or income-generating purposes), please remember the author and '
+    + 'contribute to its development by purchasing a license.' + slinebreak +
+    slinebreak +
+    'This software is supplied as is, with or without bugs. No warranty is offered '
+    + 'as to its operation or the data processed. Make backups!';
 end;
 
 procedure TfrmMain.InitEditFieldTab;
@@ -720,8 +734,8 @@ end;
 
 procedure TfrmMain.ExportTheUnit(AUnitFilePath: string);
 begin
-  caption := OlfAboutDialog1.Titre + ' (v' +
-    OlfAboutDialog1.VersionNumero + ')';
+  caption := OlfAboutDialog1.Titre + ' (v' + OlfAboutDialog1.VersionNumero +
+    ')'; // why ?
   tfile.WriteAllText(AUnitFilePath, CurrentProject.AsDelphi, tencoding.UTF8);
   RefreshFormCaption;
   ShowMessage('Export done.');
