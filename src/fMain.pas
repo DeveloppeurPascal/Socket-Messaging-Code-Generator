@@ -602,11 +602,12 @@ begin
   cbFieldGenerate.IsChecked := CurrentField.GenerateTheField;
   cbFreeNeeded.IsChecked := CurrentField.IsAClassNeedsAFree;
 
-  tthread.ForceQueue(nil,
-    procedure
-    begin
-      edtFieldName.SetFocus;
-    end);
+  // TODO : PP, 2024-03-07, see https://github.com/DeveloppeurPascal/Socket-Messaging-Code-Generator/issues/50
+  // tthread.ForceQueue(nil,
+  // procedure
+  // begin
+  // edtFieldName.SetFocus;
+  // end);
 end;
 
 procedure TfrmMain.InitEditMessageTab;
@@ -630,11 +631,12 @@ begin
   lblMessageID.Text := 'Internal message ID : ' +
     CurrentMessage.messageid.ToString;
 
-  tthread.ForceQueue(nil,
-    procedure
-    begin
-      edtMessageName.SetFocus;
-    end);
+  // TODO : PP, 2024-03-07, see https://github.com/DeveloppeurPascal/Socket-Messaging-Code-Generator/issues/50
+  // tthread.ForceQueue(nil,
+  // procedure
+  // begin
+  // edtMessageName.SetFocus;
+  // end);
 end;
 
 procedure TfrmMain.InitEditProjectTab;
@@ -672,11 +674,12 @@ begin
 
   edtProjectDescription.Text := CurrentProject.Description;
 
-  tthread.ForceQueue(nil,
-    procedure
-    begin
-      edtProjectName.SetFocus;
-    end);
+  // TODO : PP, 2024-03-07, see https://github.com/DeveloppeurPascal/Socket-Messaging-Code-Generator/issues/50
+  // tthread.ForceQueue(nil,
+  // procedure
+  // begin
+  // edtProjectName.SetFocus;
+  // end);
 end;
 
 procedure TfrmMain.InitHomeScreen;
@@ -952,29 +955,31 @@ begin
   tvProject.tagobject := tvProject.Selected;
   if assigned(tvProject.Selected) then
   begin
+    tcProject.Visible := true;
     case tvProject.Selected.tag of
       0:
         begin
-          InitEditProjectTab;
           tcProject.ActiveTab := tiProjectEdit;
+          InitEditProjectTab;
         end;
       1:
         begin
           if not(tvProject.Selected.tagobject is TMessage) then
             raise Exception.Create('This should be a message but it''s not.');
-          CurrentMessage := (tvProject.Selected.tagobject as TMessage);
           tcProject.ActiveTab := tiMessageEdit;
+          CurrentMessage := (tvProject.Selected.tagobject as TMessage);
         end;
       2:
         begin
           if not(tvProject.Selected.tagobject is TMessageField) then
             raise Exception.Create
               ('This should be a message field but it''s not.');
-          CurrentField := (tvProject.Selected.tagobject as TMessageField);
           tcProject.ActiveTab := tiFieldEdit;
+          CurrentField := (tvProject.Selected.tagobject as TMessageField);
         end;
+    else
+      tcProject.Visible := false;
     end;
-    tcProject.Visible := true;
   end
   else
     tcProject.Visible := false;
