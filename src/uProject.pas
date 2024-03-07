@@ -1532,9 +1532,6 @@ begin
         '.onReceiveMessage' + Messages[i].MessageID.ToString +
         '(const ASender: TOlfSMSrvConnectedClient;' + sLineBreak;
       Result := Result + 'const AMessage: TOlfSMMessage);' + sLineBreak;
-      Result := Result + 'var' + sLineBreak;
-      Result := Result + '  msg: T' + Messages[i].DelphiClassName + ';' +
-        sLineBreak;
       Result := Result + 'begin' + sLineBreak;
       Result := Result + '  if not(AMessage is T' + Messages[i].DelphiClassName
         + ') then' + sLineBreak;
@@ -1577,9 +1574,6 @@ begin
         '.onReceiveMessage' + Messages[i].MessageID.ToString +
         '(const ASender: TOlfSMSrvConnectedClient;' + sLineBreak;
       Result := Result + 'const AMessage: TOlfSMMessage);' + sLineBreak;
-      Result := Result + 'var' + sLineBreak;
-      Result := Result + '  msg: T' + Messages[i].DelphiClassName + ';' +
-        sLineBreak;
       Result := Result + 'begin' + sLineBreak;
       Result := Result + '  if not(AMessage is T' + Messages[i].DelphiClassName
         + ') then' + sLineBreak;
