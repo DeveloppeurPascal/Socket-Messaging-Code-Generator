@@ -161,6 +161,10 @@ type
     procedure btnFieldOkClick(Sender: TObject);
     procedure edtFieldNameChange(Sender: TObject);
     procedure edtFieldDelphiFieldTypeChange(Sender: TObject);
+    procedure rbFieldStreamBitmapChange(Sender: TObject);
+    procedure rbFieldStreamClassChange(Sender: TObject);
+    procedure rbFieldStreamSizeOfChange(Sender: TObject);
+    procedure rbFieldStreamStringChange(Sender: TObject);
   private
     FCurrentProject: TProject;
     FCurrentScreen: TSMGScreen;
@@ -821,6 +825,30 @@ end;
 procedure TfrmMain.OlfAboutDialog1URLClick(const AURL: string);
 begin
   url_Open_In_Browser(AURL);
+end;
+
+procedure TfrmMain.rbFieldStreamBitmapChange(Sender: TObject);
+begin
+  if rbFieldStreamBitmap.IsChecked then
+    cbFreeNeeded.IsChecked := true;
+end;
+
+procedure TfrmMain.rbFieldStreamClassChange(Sender: TObject);
+begin
+  if rbFieldStreamClass.IsChecked then
+    cbFreeNeeded.IsChecked := true;
+end;
+
+procedure TfrmMain.rbFieldStreamSizeOfChange(Sender: TObject);
+begin
+  if rbFieldStreamSizeOf.IsChecked then
+    cbFreeNeeded.IsChecked := false;
+end;
+
+procedure TfrmMain.rbFieldStreamStringChange(Sender: TObject);
+begin
+  if rbFieldStreamString.IsChecked then
+    cbFreeNeeded.IsChecked := false;
 end;
 
 procedure TfrmMain.RefreshFormCaption;
