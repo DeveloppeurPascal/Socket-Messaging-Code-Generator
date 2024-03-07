@@ -546,6 +546,26 @@ begin
     slinebreak +
     'This software is supplied as is, with or without bugs. No warranty is offered '
     + 'as to its operation or the data processed. Make backups!';
+  OlfAboutDialog1.Description.Text :=
+    'Socket Messaging Code Generator creates a Delphi unit from an interface description between a server and clients in the form of messages exchanged via IP sockets.'
+    + slinebreak + slinebreak + '*****************' + slinebreak +
+    '* Publisher info' + slinebreak + slinebreak +
+    'This application was developed by Patrick Prémartin.' + slinebreak +
+    slinebreak +
+    'It is published by OLF SOFTWARE, a company registered in Paris (France) under the reference 439521725.'
+    + slinebreak + slinebreak + '****************' + slinebreak +
+    '* Personal data' + slinebreak + slinebreak +
+    'This program is autonomous in its current version. It does not depend on the Internet and communicates nothing to the outside world.'
+    + slinebreak + slinebreak + 'We have no knowledge of what you do with it.' +
+    slinebreak + slinebreak +
+    'No information about you is transmitted to us or to any third party.' +
+    slinebreak + slinebreak +
+    'We use no cookies, no tracking, no stats on your use of the application.' +
+    slinebreak + slinebreak + '**********************' + slinebreak +
+    '* User support' + slinebreak + slinebreak +
+    'If you have any questions or require additional functionality, please leave us a message on the application''s website or on its code repository.'
+    + slinebreak + slinebreak +
+    'To find out more, visit https://smcodegenerator.olfsoftware.fr';
 end;
 
 procedure TfrmMain.InitEditFieldTab;
