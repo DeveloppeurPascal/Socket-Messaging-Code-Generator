@@ -8,7 +8,7 @@ uses
   Olf.Net.Socket.Messaging;
 
 const
-  CVersionLevel = 3;
+  CVersionLevel = 4;
   CDefaultDelphiMessageClassNamePrefix = '';
   CDefaultDelphiMessageClassNameSuffix = 'Message';
 {$SCOPEDENUMS ON}
@@ -149,6 +149,7 @@ type
   end;
 
   TProject = class
+  private
     FFileName: string;
     FMessages: TMessagesList;
     FHasChanged: boolean;
@@ -160,6 +161,12 @@ type
     FDelphiUnitsUsed: string;
     FDelphiMessageClassNamePrefix: string;
     FDelphiMessageClassNameSuffix: string;
+    FConsoleUnitsUsed: string;
+    FFMXUnitsUsed: string;
+    FVCLUnitsUsed: string;
+    procedure SetConsoleUnitsUsed(const Value: string);
+    procedure SetFMXUnitsUsed(const Value: string);
+    procedure SetVCLUnitsUsed(const Value: string);
     procedure SetDelphiMessageClassNamePrefix(const Value: string);
     procedure SetDelphiMessageClassNameSuffix(const Value: string);
     function GetDelphiClientClassName: string;
@@ -197,6 +204,10 @@ type
       write SetDelphiClientClassName;
     property DelphiUnitsUsed: string read FDelphiUnitsUsed
       write SetDelphiUnitsUsed;
+    property ConsoleUnitsUsed: string read FConsoleUnitsUsed
+      write SetConsoleUnitsUsed;
+    property FMXUnitsUsed: string read FFMXUnitsUsed write SetFMXUnitsUsed;
+    property VCLUnitsUsed: string read FVCLUnitsUsed write SetVCLUnitsUsed;
     property DelphiMessageClassNamePrefix: string
       read FDelphiMessageClassNamePrefix write SetDelphiMessageClassNamePrefix;
     property DelphiMessageClassNameSuffix: string
@@ -1214,6 +1225,24 @@ begin
   Result := Result + 'uses' + sLineBreak;
   if not DelphiUnitsUsed.IsEmpty then
     Result := Result + '  ' + DelphiUnitsUsed + ',' + sLineBreak;
+  if not ConsoleUnitsUsed.IsEmpty then
+  begin
+    Result := Result + '{$IFDEF CONSOLE}' + sLineBreak;
+    Result := Result + '  ' + ConsoleUnitsUsed + ',' + sLineBreak;
+    Result := Result + '{$ENDIF}' + sLineBreak;
+  end;
+  if not VCLUnitsUsed.IsEmpty then
+  begin
+    Result := Result + '{$IFDEF FRAMEWORK_VCL}' + sLineBreak;
+    Result := Result + '  ' + VCLUnitsUsed + ',' + sLineBreak;
+    Result := Result + '{$ENDIF}' + sLineBreak;
+  end;
+  if not FMXUnitsUsed.IsEmpty then
+  begin
+    Result := Result + '{$IFDEF FRAMEWORK_FMX}' + sLineBreak;
+    Result := Result + '  ' + FMXUnitsUsed + ',' + sLineBreak;
+    Result := Result + '{$ENDIF}' + sLineBreak;
+  end;
   if HasABitmapField then
   begin
     Result := Result + '{$IFDEF FRAMEWORK_VCL}' + sLineBreak;
@@ -1656,6 +1685,22 @@ begin
     end;
 end;
 
+procedure TProject.SetConsoleUnitsUsed(const Value: string);
+begin
+  if (FConsoleUnitsUsed = Value) then
+    exit;
+  ValueChanged;
+
+  FConsoleUnitsUsed := Value.Trim;
+
+  while FConsoleUnitsUsed.StartsWith(',') do
+    FConsoleUnitsUsed := FConsoleUnitsUsed.Substring(1).Trim;
+
+  while FConsoleUnitsUsed.EndsWith(',') do
+    FConsoleUnitsUsed := FConsoleUnitsUsed.Substring(0, FConsoleUnitsUsed.Length
+      - 1).Trim;
+end;
+
 procedure TProject.SetDelphiClientClassName(const Value: string);
 begin
   if (FDelphiClientClassName = Value) then
@@ -1720,6 +1765,21 @@ begin
   FDescription := Value;
 end;
 
+procedure TProject.SetFMXUnitsUsed(const Value: string);
+begin
+  if (FFMXUnitsUsed = Value) then
+    exit;
+  ValueChanged;
+
+  FFMXUnitsUsed := Value.Trim;
+
+  while FFMXUnitsUsed.StartsWith(',') do
+    FFMXUnitsUsed := FFMXUnitsUsed.Substring(1).Trim;
+
+  while FFMXUnitsUsed.EndsWith(',') do
+    FFMXUnitsUsed := FFMXUnitsUsed.Substring(0, FFMXUnitsUsed.Length - 1).Trim;
+end;
+
 procedure TProject.SetHasChanged(const Value: boolean);
 begin
   FHasChanged := Value;
@@ -1739,6 +1799,21 @@ begin
     exit;
   ValueChanged;
   FName := Value;
+end;
+
+procedure TProject.SetVCLUnitsUsed(const Value: string);
+begin
+  if (FVCLUnitsUsed = Value) then
+    exit;
+  ValueChanged;
+
+  FVCLUnitsUsed := Value.Trim;
+
+  while FVCLUnitsUsed.StartsWith(',') do
+    FVCLUnitsUsed := FVCLUnitsUsed.Substring(1).Trim;
+
+  while FVCLUnitsUsed.EndsWith(',') do
+    FVCLUnitsUsed := FVCLUnitsUsed.Substring(0, FVCLUnitsUsed.Length - 1).Trim;
 end;
 
 procedure TProject.SetAsJSON(const Value: TJSONObject);

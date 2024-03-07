@@ -134,6 +134,12 @@ type
     rbFieldStreamBitmap: TRadioButton;
     ExportProjectDialog: TOlfSelectDirectoryDialog;
     cbFreeNeeded: TCheckBox;
+    edtProjectFMXUnitsUsed: TEdit;
+    edtProjectVCLUnitsUsed: TEdit;
+    edtProjectConsoleUnitsUsed: TEdit;
+    lblProjectFMXUnitsUsed: TLabel;
+    lblProjectVCLUnitsUsed: TLabel;
+    lblProjectConsoleUnitsUsed: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure mnuQuitClick(Sender: TObject);
     procedure mnuAboutClick(Sender: TObject);
@@ -432,6 +438,9 @@ begin
       ToDelphiConst(edtProjectDelphiUnitName.Text, true);
 
   CurrentProject.DelphiUnitsUsed := edtProjectDelphiUnitsUsed.Text;
+  CurrentProject.ConsoleUnitsUsed := edtProjectConsoleUnitsUsed.Text;
+  CurrentProject.VCLUnitsUsed := edtProjectVCLUnitsUsed.Text;
+  CurrentProject.FMXUnitsUsed := edtProjectFMXUnitsUsed.Text;
 
   edtProjectDelphiServerClassName.Text :=
     edtProjectDelphiServerClassName.Text.trim;
@@ -652,6 +661,9 @@ begin
     edtProjectDelphiUnitName.Text := CurrentProject.DelphiUnitName;
 
   edtProjectDelphiUnitsUsed.Text := CurrentProject.DelphiUnitsUsed;
+  edtProjectConsoleUnitsUsed.Text := CurrentProject.ConsoleUnitsUsed;
+  edtProjectVCLUnitsUsed.Text := CurrentProject.VCLUnitsUsed;
+  edtProjectFMXUnitsUsed.Text := CurrentProject.FMXUnitsUsed;
 
   if (CurrentProject.DelphiServerClassName = CurrentProject.
     DefaultDelphiServerClassName) then
