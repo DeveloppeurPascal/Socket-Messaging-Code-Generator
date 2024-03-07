@@ -1039,13 +1039,13 @@ object frmMain: TfrmMain
             Margins.Right = 10.000000000000000000
             Margins.Bottom = 5.000000000000000000
             Position.X = 10.000000000000000000
-            Position.Y = 460.000000000000000000
+            Position.Y = 499.000000000000000000
             Size.Width = 527.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
             TextSettings.Trimming = None
             Text = 'Field description'
-            TabOrder = 11
+            TabOrder = 12
           end
           object edtFieldDescription: TMemo
             Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
@@ -1056,11 +1056,11 @@ object frmMain: TfrmMain
             Margins.Right = 10.000000000000000000
             Margins.Bottom = 10.000000000000000000
             Position.X = 10.000000000000000000
-            Position.Y = 487.000000000000000000
+            Position.Y = 526.000000000000000000
             Size.Width = 527.000000000000000000
             Size.Height = 100.000000000000000000
             Size.PlatformDefault = False
-            TabOrder = 12
+            TabOrder = 13
             Viewport.Width = 523.000000000000000000
             Viewport.Height = 96.000000000000000000
           end
@@ -1227,6 +1227,7 @@ object frmMain: TfrmMain
               Size.PlatformDefault = False
               TabOrder = 0
               Text = 'Read/Write (sizeof)'
+              OnChange = rbFieldStreamSizeOfChange
             end
             object rbFieldStreamClass: TRadioButton
               Align = Client
@@ -1240,6 +1241,7 @@ object frmMain: TfrmMain
               Size.PlatformDefault = False
               TabOrder = 1
               Text = 'Class with LoadFromStream/SaveToStream'
+              OnChange = rbFieldStreamClassChange
             end
             object rbFieldStreamString: TRadioButton
               Align = Client
@@ -1253,6 +1255,7 @@ object frmMain: TfrmMain
               Size.PlatformDefault = False
               TabOrder = 3
               Text = 'Read/Write for string'
+              OnChange = rbFieldStreamStringChange
             end
             object rbFieldStreamTODO: TRadioButton
               Align = Client
@@ -1279,23 +1282,10 @@ object frmMain: TfrmMain
               Size.PlatformDefault = False
               TabOrder = 2
               Text = 'Read/Write for TBitmap'
+              OnChange = rbFieldStreamBitmapChange
             end
           end
           object cbFieldGenerate: TCheckBox
-            Align = Top
-            Margins.Left = 10.000000000000000000
-            Margins.Top = 10.000000000000000000
-            Margins.Right = 10.000000000000000000
-            Margins.Bottom = 10.000000000000000000
-            Position.X = 10.000000000000000000
-            Position.Y = 607.000000000000000000
-            Size.Width = 527.000000000000000000
-            Size.Height = 19.000000000000000000
-            Size.PlatformDefault = False
-            TabOrder = 13
-            Text = 'Generate this field in exported message'
-          end
-          object cbFreeNeeded: TCheckBox
             Align = Top
             Margins.Left = 10.000000000000000000
             Margins.Top = 10.000000000000000000
@@ -1307,6 +1297,20 @@ object frmMain: TfrmMain
             Size.Height = 19.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 14
+            Text = 'Generate this field in exported message'
+          end
+          object cbFreeNeeded: TCheckBox
+            Align = Top
+            Margins.Left = 10.000000000000000000
+            Margins.Top = 10.000000000000000000
+            Margins.Right = 10.000000000000000000
+            Margins.Bottom = 10.000000000000000000
+            Position.X = 10.000000000000000000
+            Position.Y = 460.000000000000000000
+            Size.Width = 527.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 11
             Text = 'Is a class, needs to be Free in message destructor'
           end
         end
