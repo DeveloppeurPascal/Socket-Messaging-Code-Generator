@@ -25,7 +25,8 @@ uses
   FMX.ScrollBox,
   FMX.Memo,
   FMX.Edit,
-  uDMAboutBoxImage;
+  uDMAboutBoxImage,
+  Olf.FMX.SelectDirectory;
 
 type
 {$SCOPEDENUMS ON}
@@ -71,7 +72,6 @@ type
     btnProjectCancel: TButton;
     mnuProject: TMenuItem;
     mnuDelphiExport: TMenuItem;
-    ExportSaveDialog: TSaveDialog;
     lblMessageName: TLabel;
     edtMessageName: TEdit;
     lblMessageDelphiClassName: TLabel;
@@ -132,6 +132,7 @@ type
     cbMessageGenerate: TCheckBox;
     cbFieldGenerate: TCheckBox;
     rbFieldStreamBitmap: TRadioButton;
+    ExportProjectDialog: TOlfSelectDirectoryDialog;
     procedure FormCreate(Sender: TObject);
     procedure mnuQuitClick(Sender: TObject);
     procedure mnuAboutClick(Sender: TObject);
@@ -176,6 +177,7 @@ type
     procedure InitEditProjectTab;
     procedure InitEditMessageTab;
     procedure InitEditFieldTab;
+    procedure ExportTheUnit(AUnitFilePath: string);
   public
     property CurrentProject: TProject read FCurrentProject
       write SetCurrentProject;
@@ -709,32 +711,43 @@ begin
   end;
 end;
 
-procedure TfrmMain.mnuDelphiExportClick(Sender: TObject);
+procedure TfrmMain.ExportTheUnit(AUnitFilePath: string);
 begin
-  ExportSaveDialog.DefaultExt := 'pas';
-  ExportSaveDialog.Filter := 'Pascal file|*.pas';
+  caption := OlfAboutDialog1.Titre + ' (v' +
+    OlfAboutDialog1.VersionNumero + ')';
+  tfile.WriteAllText(AUnitFilePath, CurrentProject.AsDelphi, tencoding.UTF8);
+  RefreshFormCaption;
+  ShowMessage('Export done.');
+end;
 
-  if ExportSaveDialog.InitialDir.IsEmpty then
+procedure TfrmMain.mnuDelphiExportClick(Sender: TObject);
+var
+  UnitFileName, UnitFilePath: string;
+begin
+  if ExportProjectDialog.Directory.IsEmpty then
     if CurrentProject.FileName.IsEmpty then
-      ExportSaveDialog.InitialDir := tpath.getdocumentspath
+      ExportProjectDialog.Directory := tpath.getdocumentspath
     else
-      ExportSaveDialog.InitialDir := tpath.GetDirectoryName
+      ExportProjectDialog.Directory := tpath.GetDirectoryName
         (CurrentProject.FileName);
   // TODO : restore previous "exportsavedialog" from settings or the project settings
 
-  ExportSaveDialog.FileName := tpath.Combine(ExportSaveDialog.InitialDir,
-    CurrentProject.DelphiUnitName + '.' + ExportSaveDialog.DefaultExt);
-
-  if ExportSaveDialog.Execute and (length(trim(ExportSaveDialog.FileName)) > 0)
-    and (tpath.GetExtension(ExportSaveDialog.FileName) = '.' +
-    ExportSaveDialog.DefaultExt) then
+  if ExportProjectDialog.Execute and (not ExportProjectDialog.Directory.IsEmpty)
+    and tdirectory.exists(ExportProjectDialog.Directory) then
   begin
-    caption := OlfAboutDialog1.Titre + ' (v' +
-      OlfAboutDialog1.VersionNumero + ')';
-    tfile.WriteAllText(ExportSaveDialog.FileName, CurrentProject.AsDelphi,
-      tencoding.UTF8);
-    RefreshFormCaption;
-    ShowMessage('Export done.');
+    UnitFileName := CurrentProject.DelphiUnitName + '.pas';
+    UnitFilePath := tpath.combine(ExportProjectDialog.Directory, UnitFileName);
+    if tfile.exists(UnitFilePath) then
+      TDialogService.MessageDialog('This unit "' + UnitFileName +
+        '" already exists. Do you want to replace it ?',
+        tmsgdlgtype.mtConfirmation, mbyesno, TMsgDlgBtn.mbNo, 0,
+        procedure(Const AModalResult: TModalResult)
+        begin
+          if AModalResult = mryes then
+            ExportTheUnit(UnitFilePath);
+        end)
+    else
+      ExportTheUnit(UnitFilePath);
   end;
 end;
 
@@ -757,7 +770,7 @@ begin
 
   if OpenProjectDialog.Execute and (length(trim(OpenProjectDialog.FileName)) >
     0) and (tpath.GetExtension(OpenProjectDialog.FileName) = '.' +
-    OpenProjectDialog.DefaultExt) and tfile.Exists(OpenProjectDialog.FileName)
+    OpenProjectDialog.DefaultExt) and tfile.exists(OpenProjectDialog.FileName)
   then
   begin
     CurrentProject := TProject.Create;

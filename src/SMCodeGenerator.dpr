@@ -9,7 +9,8 @@ uses
   u_urlOpen in '..\lib-externes\librairies\u_urlOpen.pas',
   uProject in 'uProject.pas',
   Olf.Net.Socket.Messaging in '..\lib-externes\Socket-Messaging-Library\src\Olf.Net.Socket.Messaging.pas',
-  uDMAboutBoxImage in 'uDMAboutBoxImage.pas' {dmAboutBoxImage: TDataModule};
+  uDMAboutBoxImage in 'uDMAboutBoxImage.pas' {dmAboutBoxImage: TDataModule},
+  Olf.FMX.SelectDirectory in '..\lib-externes\Delphi-FMXExtend-Library\src\Olf.FMX.SelectDirectory.pas';
 
 {$R *.res}
 

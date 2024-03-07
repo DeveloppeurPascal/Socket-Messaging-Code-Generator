@@ -1366,12 +1366,10 @@ object frmMain: TfrmMain
     Left = 192
     Top = 320
   end
-  object ExportSaveDialog: TSaveDialog
-    DefaultExt = 'pas'
-    Filter = 'Pascal file|*.pas'
-    Options = [ofOverwritePrompt, ofHideReadOnly, ofPathMustExist, ofNoReadOnlyReturn, ofEnableSizing, ofDontAddToRecent]
-    Title = 'Export to file'
-    Left = 40
-    Top = 304
+  object ExportProjectDialog: TOlfSelectDirectoryDialog
+    Text = 'Choose an export folder for this unit.'
+    Root = ''
+    Left = 104
+    Top = 400
   end
 end
