@@ -77,7 +77,7 @@ object frmMain: TfrmMain
   object OlfAboutDialog1: TOlfAboutDialog
     Titre = 'Socket Messaging Code Generator'
     VersionNumero = '1.1'
-    VersionDate = '20240305'
+    VersionDate = '20240307'
     MultiResBitmap = <
       item
       end>
