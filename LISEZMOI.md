@@ -16,9 +16,9 @@ Ce logiciel est disponible dans une version de production directement installabl
 
 Vous pouvez le télécharger et le rediffuser gratuitement à condition de ne pas en modifier le contenu (installeur, programme, fichiers annexes, ...).
 
-[Télécharger le programme (Windows 64 bits)](https://olfsoftware.lemonsqueezy.com/checkout/buy/81ff8a98-6c96-463f-b399-0b5982be779c)
+[Télécharger le programme (Windows 32 & 64 bits, Mac x64 & M1)](https://olfsoftware.lemonsqueezy.com/checkout/buy/81ff8a98-6c96-463f-b399-0b5982be779c)
 
-Il est aussi disponible [depuis GetIt](https://getitnow.embarcadero.com/socket-messaging-code-generator/) directement Dans l'environnement de développement de Delphi à partir de la version 11.3 Alexandria.
+Il est aussi disponible [depuis GetIt](https://getitnow.embarcadero.com/socket-messaging-code-generator/) directement dans l'environnement de développement de Delphi.
 
 Si vous utilisez régulièrement ce logiciel et en êtes satisfait vous êtes invité à en acheter une licence d'utilisateur final. L'achat d'une licence vous donnera accès aux mises à jour du logiciel en plus d'activer d'évenuelles fonctionnalités optionnelles.
 
