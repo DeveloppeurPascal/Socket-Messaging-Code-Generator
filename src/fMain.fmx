@@ -84,12 +84,6 @@ object frmMain: TfrmMain
     Images = dmAboutBoxImage.ImageList1
     ImageIndex = 0
     URL = 'https://smcodegenerator.olfsoftware.fr/'
-    Description.Strings = (
-      '(c) Patrick Pr'#233'martin 2023')
-    Licence.Strings = (
-      
-        'This is a shareware program. If you use it, please buy a license' +
-        ' or sponsor the project and its developer on GitHub.')
     onURLClick = OlfAboutDialog1URLClick
     Langue = EN
     Left = 56
