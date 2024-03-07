@@ -133,6 +133,7 @@ type
     cbFieldGenerate: TCheckBox;
     rbFieldStreamBitmap: TRadioButton;
     ExportProjectDialog: TOlfSelectDirectoryDialog;
+    cbFreeNeeded: TCheckBox;
     procedure FormCreate(Sender: TObject);
     procedure mnuQuitClick(Sender: TObject);
     procedure mnuAboutClick(Sender: TObject);
@@ -265,6 +266,7 @@ begin
     CurrentField.DelphiFieldStreamFormat := TDelphiFieldStreamFormat.TODO;
 
   CurrentField.GenerateTheField := cbFieldGenerate.IsChecked;
+  CurrentField.IsAClassNeedsAFree := cbFreeNeeded.IsChecked;
 
   RefreshFormCaption;
 end;
@@ -560,6 +562,7 @@ begin
     TDelphiFieldStreamFormat.TODO;
 
   cbFieldGenerate.IsChecked := CurrentField.GenerateTheField;
+  cbFreeNeeded.IsChecked := CurrentField.IsAClassNeedsAFree;
 
   tthread.ForceQueue(nil,
     procedure

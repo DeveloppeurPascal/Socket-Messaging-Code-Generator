@@ -8,7 +8,7 @@ uses
   Olf.Net.Socket.Messaging;
 
 const
-  CVersionLevel = 2;
+  CVersionLevel = 3;
   CDefaultDelphiMessageClassNamePrefix = '';
   CDefaultDelphiMessageClassNameSuffix = 'Message';
 {$SCOPEDENUMS ON}
@@ -33,6 +33,7 @@ type
     FDelphiFieldType: string;
     FDelphiFieldStreamFormat: TDelphiFieldStreamFormat;
     FGenerateTheField: boolean;
+    FIsAClassNeedsAFree: boolean;
     procedure SetDefaultValue(const Value: string);
     procedure SetDelphiFieldName(const Value: string);
     procedure SetDelphiFieldType(const Value: string);
@@ -44,6 +45,7 @@ type
     function GetDelphiFieldName: string;
     procedure SetDelphiFieldStreamFormat(const Value: TDelphiFieldStreamFormat);
     procedure SetGenerateTheField(const Value: boolean);
+    procedure SetIsAClassNeedsAFree(const Value: boolean);
   protected
     procedure ValueChanged;
   public
@@ -60,6 +62,8 @@ type
       read FDelphiFieldStreamFormat write SetDelphiFieldStreamFormat;
     property GenerateTheField: boolean read FGenerateTheField
       write SetGenerateTheField;
+    property IsAClassNeedsAFree: boolean read FIsAClassNeedsAFree
+      write SetIsAClassNeedsAFree;
     property AsJSON: TJSONObject read GetAsJSON write SetAsJSON;
     constructor Create(AParent: TMessageFieldsList); virtual;
     function DefaultDelphiFieldName(AName: string = ''): string;
@@ -333,6 +337,7 @@ begin
   FDelphiFieldType := '';
   FDelphiFieldStreamFormat := TDelphiFieldStreamFormat.RWSizeOf;
   FGenerateTheField := true;
+  FIsAClassNeedsAFree := false;
 end;
 
 function TMessageField.GetAsJSON: TJSONObject;
@@ -346,6 +351,7 @@ begin
   Result.AddPair('defaultvalue', FDefaultValue);
   Result.AddPair('dxstreamrw', ord(FDelphiFieldStreamFormat));
   Result.AddPair('genfld', FGenerateTheField);
+  Result.AddPair('freeneeded', FIsAClassNeedsAFree);
 end;
 
 function TMessageField.DefaultDelphiFieldName(AName: string): string;
@@ -390,6 +396,8 @@ begin
     FDelphiFieldStreamFormat := TDelphiFieldStreamFormat(i);
   if not Value.TryGetValue<boolean>('genfld', FGenerateTheField) then
     FGenerateTheField := true;
+  if not Value.TryGetValue<boolean>('freeneeded', FIsAClassNeedsAFree) then
+    FIsAClassNeedsAFree := false;
 end;
 
 procedure TMessageField.SetDefaultValue(const Value: string);
@@ -439,6 +447,14 @@ begin
     exit;
   ValueChanged;
   FGenerateTheField := Value;
+end;
+
+procedure TMessageField.SetIsAClassNeedsAFree(const Value: boolean);
+begin
+  if (FIsAClassNeedsAFree = Value) then
+    exit;
+  ValueChanged;
+  FIsAClassNeedsAFree := Value;
 end;
 
 procedure TMessageField.SetName(const Value: string);
@@ -731,6 +747,7 @@ var
   i, j: integer;
   msg: TMessage;
   fld: TMessageField;
+  DestructorNeeded: boolean;
 begin
   for i := 0 to Count - 1 do
     if items[i].GenerateTheMessage then
@@ -746,6 +763,7 @@ begin
       Result := Result + '  inherited;' + sLineBreak;
       Result := Result + '  MessageID := ' + msg.MessageID.ToString + ';' +
         sLineBreak;
+      DestructorNeeded := false;
       for j := 0 to msg.Fields.Count - 1 do
         if msg.Fields[j].GenerateTheField then
         begin
@@ -754,9 +772,25 @@ begin
           else
             Result := Result + '  F' + fld.DelphiFieldName + ' := ' +
               fld.DefaultValue + ';' + sLineBreak;
+          DestructorNeeded := DestructorNeeded or fld.IsAClassNeedsAFree;
         end;
       Result := Result + 'end;' + sLineBreak;
       Result := Result + sLineBreak;
+
+      if DestructorNeeded then
+      begin
+        Result := Result + 'destructor T' + msg.DelphiClassName + '.Destroy;' +
+          sLineBreak;
+        Result := Result + 'begin' + sLineBreak;
+        for j := 0 to msg.Fields.Count - 1 do
+          if msg.Fields[j].GenerateTheField and msg.Fields[j].IsAClassNeedsAFree
+          then
+            Result := Result + '  F' + msg.Fields[j].DelphiFieldName + '.Free;'
+              + sLineBreak;
+        Result := Result + '  inherited;' + sLineBreak;
+        Result := Result + 'end;' + sLineBreak;
+        Result := Result + sLineBreak;
+      end;
 
       Result := Result + 'function T' + msg.DelphiClassName +
         '.GetNewInstance: TOlfSMMessage;' + sLineBreak;
@@ -854,6 +888,7 @@ var
   i, j: integer;
   msg: TMessage;
   fld: TMessageField;
+  DestructorNeeded: boolean;
 begin
   for i := 0 to Count - 1 do
     if items[i].GenerateTheMessage then
@@ -876,12 +911,14 @@ begin
       Result := Result + '  T' + msg.DelphiClassName + ' = class(TOlfSMMessage)'
         + sLineBreak;
       Result := Result + '  private' + sLineBreak;
+      DestructorNeeded := false;
       for j := 0 to msg.Fields.Count - 1 do
         if msg.Fields[j].GenerateTheField then
         begin
           fld := msg.Fields[j];
           Result := Result + '    F' + fld.DelphiFieldName + ': ' +
             fld.DelphiFieldType + ';' + sLineBreak;
+          DestructorNeeded := DestructorNeeded or fld.IsAClassNeedsAFree;
         end;
       for j := 0 to msg.Fields.Count - 1 do
         if msg.Fields[j].GenerateTheField then
@@ -914,6 +951,8 @@ begin
             + fld.DelphiFieldName + ';' + sLineBreak;
         end;
       Result := Result + '    constructor Create; override;' + sLineBreak;
+      if DestructorNeeded then
+        Result := Result + '    destructor Destroy; override;' + sLineBreak;
       Result := Result +
         '    procedure LoadFromStream(Stream: TStream); override;' + sLineBreak;
       Result := Result +

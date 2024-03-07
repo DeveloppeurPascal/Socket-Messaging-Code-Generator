@@ -884,7 +884,7 @@ object frmMain: TfrmMain
           Size.Height = 787.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 0
-          Viewport.Width = 563.000000000000000000
+          Viewport.Width = 547.000000000000000000
           Viewport.Height = 787.000000000000000000
           object lblFieldOrder: TLabel
             Align = MostTop
@@ -894,7 +894,7 @@ object frmMain: TfrmMain
             Margins.Bottom = 10.000000000000000000
             Position.X = 10.000000000000000000
             Position.Y = 10.000000000000000000
-            Size.Width = 543.000000000000000000
+            Size.Width = 527.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
             TextSettings.Trimming = None
@@ -909,7 +909,7 @@ object frmMain: TfrmMain
             Margins.Bottom = 5.000000000000000000
             Position.X = 10.000000000000000000
             Position.Y = 47.000000000000000000
-            Size.Width = 543.000000000000000000
+            Size.Width = 527.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
             TextSettings.Trimming = None
@@ -926,7 +926,7 @@ object frmMain: TfrmMain
             Margins.Top = 5.000000000000000000
             Margins.Right = 10.000000000000000000
             Margins.Bottom = 10.000000000000000000
-            Size.Width = 543.000000000000000000
+            Size.Width = 527.000000000000000000
             Size.Height = 22.000000000000000000
             Size.PlatformDefault = False
             OnChange = edtFieldNameChange
@@ -940,7 +940,7 @@ object frmMain: TfrmMain
             Margins.Bottom = 5.000000000000000000
             Position.X = 10.000000000000000000
             Position.Y = 254.000000000000000000
-            Size.Width = 543.000000000000000000
+            Size.Width = 527.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
             TextSettings.Trimming = None
@@ -957,7 +957,7 @@ object frmMain: TfrmMain
             Margins.Top = 5.000000000000000000
             Margins.Right = 10.000000000000000000
             Margins.Bottom = 10.000000000000000000
-            Size.Width = 543.000000000000000000
+            Size.Width = 527.000000000000000000
             Size.Height = 22.000000000000000000
             Size.PlatformDefault = False
             TextPrompt = 'number, quoted string, function or nothing'
@@ -970,7 +970,7 @@ object frmMain: TfrmMain
             Margins.Bottom = 5.000000000000000000
             Position.X = 10.000000000000000000
             Position.Y = 185.000000000000000000
-            Size.Width = 543.000000000000000000
+            Size.Width = 527.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
             TextSettings.Trimming = None
@@ -987,7 +987,7 @@ object frmMain: TfrmMain
             Margins.Top = 5.000000000000000000
             Margins.Right = 10.000000000000000000
             Margins.Bottom = 10.000000000000000000
-            Size.Width = 543.000000000000000000
+            Size.Width = 527.000000000000000000
             Size.Height = 22.000000000000000000
             Size.PlatformDefault = False
             OnChange = edtFieldDelphiFieldTypeChange
@@ -1000,7 +1000,7 @@ object frmMain: TfrmMain
             Margins.Bottom = 5.000000000000000000
             Position.X = 10.000000000000000000
             Position.Y = 116.000000000000000000
-            Size.Width = 543.000000000000000000
+            Size.Width = 527.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
             TextSettings.Trimming = None
@@ -1017,7 +1017,7 @@ object frmMain: TfrmMain
             Margins.Top = 5.000000000000000000
             Margins.Right = 10.000000000000000000
             Margins.Bottom = 10.000000000000000000
-            Size.Width = 533.000000000000000000
+            Size.Width = 517.000000000000000000
             Size.Height = 22.000000000000000000
             Size.PlatformDefault = False
             object Label1: TLabel
@@ -1040,7 +1040,7 @@ object frmMain: TfrmMain
             Margins.Bottom = 5.000000000000000000
             Position.X = 10.000000000000000000
             Position.Y = 460.000000000000000000
-            Size.Width = 543.000000000000000000
+            Size.Width = 527.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
             TextSettings.Trimming = None
@@ -1057,20 +1057,20 @@ object frmMain: TfrmMain
             Margins.Bottom = 10.000000000000000000
             Position.X = 10.000000000000000000
             Position.Y = 487.000000000000000000
-            Size.Width = 543.000000000000000000
+            Size.Width = 527.000000000000000000
             Size.Height = 100.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 12
-            Viewport.Width = 539.000000000000000000
+            Viewport.Width = 523.000000000000000000
             Viewport.Height = 96.000000000000000000
           end
           object GridPanelLayout3: TGridPanelLayout
             Align = Top
-            Position.Y = 636.000000000000000000
-            Size.Width = 563.000000000000000000
+            Position.Y = 675.000000000000000000
+            Size.Width = 547.000000000000000000
             Size.Height = 136.000000000000000000
             Size.PlatformDefault = False
-            TabOrder = 14
+            TabOrder = 15
             ColumnCollection = <
               item
                 Value = 50.000000000000000000
@@ -1108,7 +1108,7 @@ object frmMain: TfrmMain
               Margins.Top = 10.000000000000000000
               Margins.Right = 10.000000000000000000
               Margins.Bottom = 10.000000000000000000
-              Size.Width = 261.500000000000000000
+              Size.Width = 253.500000000000000000
               Size.Height = 48.000000000000000000
               Size.PlatformDefault = False
               TabOrder = 0
@@ -1122,7 +1122,7 @@ object frmMain: TfrmMain
               Margins.Top = 10.000000000000000000
               Margins.Right = 10.000000000000000000
               Margins.Bottom = 10.000000000000000000
-              Size.Width = 261.500000000000000000
+              Size.Width = 253.500000000000000000
               Size.Height = 48.000000000000000000
               Size.PlatformDefault = False
               TabOrder = 1
@@ -1136,7 +1136,7 @@ object frmMain: TfrmMain
               Margins.Top = 10.000000000000000000
               Margins.Right = 10.000000000000000000
               Margins.Bottom = 10.000000000000000000
-              Size.Width = 543.000000000000000000
+              Size.Width = 527.000000000000000000
               Size.Height = 48.000000000000000000
               Size.PlatformDefault = False
               TabOrder = 2
@@ -1153,7 +1153,7 @@ object frmMain: TfrmMain
             Margins.Bottom = 5.000000000000000000
             Position.X = 10.000000000000000000
             Position.Y = 323.000000000000000000
-            Size.Width = 543.000000000000000000
+            Size.Width = 527.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
             TextSettings.Trimming = None
@@ -1168,7 +1168,7 @@ object frmMain: TfrmMain
             Margins.Bottom = 10.000000000000000000
             Position.X = 10.000000000000000000
             Position.Y = 350.000000000000000000
-            Size.Width = 543.000000000000000000
+            Size.Width = 527.000000000000000000
             Size.Height = 90.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 10
@@ -1222,7 +1222,7 @@ object frmMain: TfrmMain
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
-              Size.Width = 261.500000000000000000
+              Size.Width = 253.500000000000000000
               Size.Height = 20.600000381469730000
               Size.PlatformDefault = False
               TabOrder = 0
@@ -1235,7 +1235,7 @@ object frmMain: TfrmMain
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
-              Size.Width = 261.500000000000000000
+              Size.Width = 253.500000000000000000
               Size.Height = 20.600000381469730000
               Size.PlatformDefault = False
               TabOrder = 1
@@ -1248,7 +1248,7 @@ object frmMain: TfrmMain
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
-              Size.Width = 261.500000000000000000
+              Size.Width = 253.500000000000000000
               Size.Height = 19.700004577636720000
               Size.PlatformDefault = False
               TabOrder = 3
@@ -1261,7 +1261,7 @@ object frmMain: TfrmMain
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
-              Size.Width = 261.500000000000000000
+              Size.Width = 253.500000000000000000
               Size.Height = 19.700004577636720000
               Size.PlatformDefault = False
               TabOrder = 4
@@ -1274,7 +1274,7 @@ object frmMain: TfrmMain
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
-              Size.Width = 261.500000000000000000
+              Size.Width = 253.500000000000000000
               Size.Height = 19.699996948242190000
               Size.PlatformDefault = False
               TabOrder = 2
@@ -1289,11 +1289,25 @@ object frmMain: TfrmMain
             Margins.Bottom = 10.000000000000000000
             Position.X = 10.000000000000000000
             Position.Y = 607.000000000000000000
-            Size.Width = 543.000000000000000000
+            Size.Width = 527.000000000000000000
             Size.Height = 19.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 13
             Text = 'Generate this field in exported message'
+          end
+          object cbFreeNeeded: TCheckBox
+            Align = Top
+            Margins.Left = 10.000000000000000000
+            Margins.Top = 10.000000000000000000
+            Margins.Right = 10.000000000000000000
+            Margins.Bottom = 10.000000000000000000
+            Position.X = 10.000000000000000000
+            Position.Y = 646.000000000000000000
+            Size.Width = 527.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 14
+            Text = 'Is a class, needs to be Free in message destructor'
           end
         end
       end
