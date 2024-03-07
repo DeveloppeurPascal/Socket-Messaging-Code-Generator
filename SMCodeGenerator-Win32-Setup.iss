@@ -34,7 +34,7 @@ Name: "fr"; MessagesFile: "compiler:Languages\French.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: ".\Win32\Release\SMCodeGenerator.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "src\Win32\Release\SMCodeGenerator.exe"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
 Name: "{commonprograms}\{#MyAppName}\SM Code Generator (32 bits)"; Filename: "{app}\{#MyAppExeName}"
