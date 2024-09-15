@@ -1,6 +1,6 @@
 # Socket Messaging Code Generator
 
-[This page in english.](README.md)
+[This page in English.](README.md)
 
 Ce dépôt contient les codes sources du programme en Delphi de génération d'unités Pascal simplifiant l'utilisation de [la librairie Socket Messaging](https://socketmessaging.developpeur-pascal.fr/) dans le cadre du développement de logiciels clients/serveur sur réseau TCP/IP.
 
@@ -9,6 +9,12 @@ La librairie est utilisable à la main si vous préférez coder. Elle est télé
 Une [présentation du projet et de son utilisation](https://github.com/DeveloppeurPascal/DCB2023-Socket-Messaging-library-and-generator) a été faite lors du [Delphi Coding Bootcamp 2023](https://learndelphi.org/fr/coding-bootcamp-2023/).
 
 Ce dépôt de code contient un projet développé en langage Pascal Objet sous Delphi. Vous ne savez pas ce qu'est Dephi ni où le télécharger ? Vous en saurez plus [sur ce site web](https://delphi-resources.developpeur-pascal.fr/).
+
+## Présentations et conférences
+
+### Twitch
+
+Suivez mes streams de développement de logiciels, jeux vidéo, applications mobiles et sites web sur [ma chaîne Twitch](https://www.twitch.tv/patrickpremartin) ou en rediffusion sur [Serial Streameur](https://serialstreameur.fr) la plupart du temps en français.
 
 ## Utiliser ce logiciel
 
@@ -39,7 +45,7 @@ Ce projet utilise des dépendances sous forme de sous modules. Ils seront absent
 
 ## Licence d'utilisation de ce dépôt de code et de son contenu
 
-Ces codes sources sont distribués sous licence [AGPL 3.0 ou ultérieure] (https://choosealicense.com/licenses/agpl-3.0/).
+Ces codes sources sont distribués sous licence [AGPL 3.0 ou ultérieure](https://choosealicense.com/licenses/agpl-3.0/).
 
 Vous êtes globalement libre d'utiliser le contenu de ce dépôt de code n'importe où à condition :
 * d'en faire mention dans vos projets
