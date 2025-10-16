@@ -1,0 +1,1183 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD>
+<BODY>
+    <OBJECT type="text/site properties">
+      <param name="Window Styles" value="0x800227">
+    </OBJECT>
+    <UL>      <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="SMCodeGenerator">
+          <param name="Local" value="SMCodeGenerator.html">
+          </OBJECT>
+          <UL>
+              <LI> <OBJECT type="text/sitemap">
+                  <param name="Name" value="fMain">
+                  <param name="Local" value="fMain.html">
+                  </OBJECT>
+                  <UL>
+                      <LI> <OBJECT type="text/sitemap">
+                          <param name="Name" value="Classes">
+                          </OBJECT>
+                          <UL>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="TfrmMain">
+                                  <param name="Local" value="fMain.TfrmMain.html">
+                                  </OBJECT>
+                                  <UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Properties">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="CurrentField">
+                                                  <param name="Local" value="fMain.TfrmMain.CurrentField.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="CurrentMessage">
+                                                  <param name="Local" value="fMain.TfrmMain.CurrentMessage.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="CurrentProject">
+                                                  <param name="Local" value="fMain.TfrmMain.CurrentProject.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="CurrentScreen">
+                                                  <param name="Local" value="fMain.TfrmMain.CurrentScreen.html">
+                                                  </OBJECT>
+                                          </UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Methods">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="ExportTheUnit">
+                                                  <param name="Local" value="fMain.TfrmMain.ExportTheUnit.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="FormCloseQuery">
+                                                  <param name="Local" value="fMain.TfrmMain.FormCloseQuery.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="FormCreate">
+                                                  <param name="Local" value="fMain.TfrmMain.FormCreate.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="FormDestroy">
+                                                  <param name="Local" value="fMain.TfrmMain.FormDestroy.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="InitAboutDialogDescriptionAndLicense">
+                                                  <param name="Local" value="fMain.TfrmMain.InitAboutDialogDescriptionAndLicense.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="InitEditFieldTab">
+                                                  <param name="Local" value="fMain.TfrmMain.InitEditFieldTab.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="InitEditMessageTab">
+                                                  <param name="Local" value="fMain.TfrmMain.InitEditMessageTab.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="InitEditProjectTab">
+                                                  <param name="Local" value="fMain.TfrmMain.InitEditProjectTab.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="InitHomeScreen">
+                                                  <param name="Local" value="fMain.TfrmMain.InitHomeScreen.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="InitProjectScreen">
+                                                  <param name="Local" value="fMain.TfrmMain.InitProjectScreen.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="OlfAboutDialog1URLClick">
+                                                  <param name="Local" value="fMain.TfrmMain.OlfAboutDialog1URLClick.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="RefreshFormCaption">
+                                                  <param name="Local" value="fMain.TfrmMain.RefreshFormCaption.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="UpdateButtonsAndMenus">
+                                                  <param name="Local" value="fMain.TfrmMain.UpdateButtonsAndMenus.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnFieldCancelClick">
+                                                  <param name="Local" value="fMain.TfrmMain.btnFieldCancelClick.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnFieldDeleteClick">
+                                                  <param name="Local" value="fMain.TfrmMain.btnFieldDeleteClick.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnFieldOkClick">
+                                                  <param name="Local" value="fMain.TfrmMain.btnFieldOkClick.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnMessageCancelClick">
+                                                  <param name="Local" value="fMain.TfrmMain.btnMessageCancelClick.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnMessageDeleteClick">
+                                                  <param name="Local" value="fMain.TfrmMain.btnMessageDeleteClick.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnMessageOkClick">
+                                                  <param name="Local" value="fMain.TfrmMain.btnMessageOkClick.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnNewFieldClick">
+                                                  <param name="Local" value="fMain.TfrmMain.btnNewFieldClick.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnNewMessageClick">
+                                                  <param name="Local" value="fMain.TfrmMain.btnNewMessageClick.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnProjectCancelClick">
+                                                  <param name="Local" value="fMain.TfrmMain.btnProjectCancelClick.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnProjectOkClick">
+                                                  <param name="Local" value="fMain.TfrmMain.btnProjectOkClick.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="edtFieldDelphiFieldTypeChange">
+                                                  <param name="Local" value="fMain.TfrmMain.edtFieldDelphiFieldTypeChange.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="edtFieldNameChange">
+                                                  <param name="Local" value="fMain.TfrmMain.edtFieldNameChange.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="edtMessageNameChange">
+                                                  <param name="Local" value="fMain.TfrmMain.edtMessageNameChange.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="edtProjectNameChange">
+                                                  <param name="Local" value="fMain.TfrmMain.edtProjectNameChange.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="mnuAboutClick">
+                                                  <param name="Local" value="fMain.TfrmMain.mnuAboutClick.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="mnuCloseClick">
+                                                  <param name="Local" value="fMain.TfrmMain.mnuCloseClick.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="mnuDelphiExportClick">
+                                                  <param name="Local" value="fMain.TfrmMain.mnuDelphiExportClick.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="mnuNewFileClick">
+                                                  <param name="Local" value="fMain.TfrmMain.mnuNewFileClick.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="mnuOpenFileClick">
+                                                  <param name="Local" value="fMain.TfrmMain.mnuOpenFileClick.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="mnuOptionsClick">
+                                                  <param name="Local" value="fMain.TfrmMain.mnuOptionsClick.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="mnuQuitClick">
+                                                  <param name="Local" value="fMain.TfrmMain.mnuQuitClick.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="mnuSaveClick">
+                                                  <param name="Local" value="fMain.TfrmMain.mnuSaveClick.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="rbFieldStreamBitmapChange">
+                                                  <param name="Local" value="fMain.TfrmMain.rbFieldStreamBitmapChange.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="rbFieldStreamClassChange">
+                                                  <param name="Local" value="fMain.TfrmMain.rbFieldStreamClassChange.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="rbFieldStreamSizeOfChange">
+                                                  <param name="Local" value="fMain.TfrmMain.rbFieldStreamSizeOfChange.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="rbFieldStreamStringChange">
+                                                  <param name="Local" value="fMain.TfrmMain.rbFieldStreamStringChange.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="tvProjectChange">
+                                                  <param name="Local" value="fMain.TfrmMain.tvProjectChange.html">
+                                                  </OBJECT>
+                                          </UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Fields">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="ExportProjectDialog">
+                                                  <param name="Local" value="fMain.TfrmMain.ExportProjectDialog.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="GridPanelLayout1">
+                                                  <param name="Local" value="fMain.TfrmMain.GridPanelLayout1.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="GridPanelLayout2">
+                                                  <param name="Local" value="fMain.TfrmMain.GridPanelLayout2.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="GridPanelLayout3">
+                                                  <param name="Local" value="fMain.TfrmMain.GridPanelLayout3.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="GridPanelLayout4">
+                                                  <param name="Local" value="fMain.TfrmMain.GridPanelLayout4.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="Label1">
+                                                  <param name="Local" value="fMain.TfrmMain.Label1.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="Label2">
+                                                  <param name="Local" value="fMain.TfrmMain.Label2.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="Label3">
+                                                  <param name="Local" value="fMain.TfrmMain.Label3.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="Label4">
+                                                  <param name="Local" value="fMain.TfrmMain.Label4.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="Label5">
+                                                  <param name="Local" value="fMain.TfrmMain.Label5.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="Label6">
+                                                  <param name="Local" value="fMain.TfrmMain.Label6.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="MainMenu1">
+                                                  <param name="Local" value="fMain.TfrmMain.MainMenu1.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="OlfAboutDialog1">
+                                                  <param name="Local" value="fMain.TfrmMain.OlfAboutDialog1.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="OpenProjectDialog">
+                                                  <param name="Local" value="fMain.TfrmMain.OpenProjectDialog.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="SaveProjectDialog">
+                                                  <param name="Local" value="fMain.TfrmMain.SaveProjectDialog.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="Splitter1">
+                                                  <param name="Local" value="fMain.TfrmMain.Splitter1.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="VertScrollBox1">
+                                                  <param name="Local" value="fMain.TfrmMain.VertScrollBox1.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="VertScrollBox2">
+                                                  <param name="Local" value="fMain.TfrmMain.VertScrollBox2.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="VertScrollBox3">
+                                                  <param name="Local" value="fMain.TfrmMain.VertScrollBox3.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnExportDelphiUnit">
+                                                  <param name="Local" value="fMain.TfrmMain.btnExportDelphiUnit.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnFieldCancel">
+                                                  <param name="Local" value="fMain.TfrmMain.btnFieldCancel.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnFieldDelete">
+                                                  <param name="Local" value="fMain.TfrmMain.btnFieldDelete.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnFieldOk">
+                                                  <param name="Local" value="fMain.TfrmMain.btnFieldOk.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnMessageCancel">
+                                                  <param name="Local" value="fMain.TfrmMain.btnMessageCancel.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnMessageDelete">
+                                                  <param name="Local" value="fMain.TfrmMain.btnMessageDelete.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnMessageOk">
+                                                  <param name="Local" value="fMain.TfrmMain.btnMessageOk.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnNewField">
+                                                  <param name="Local" value="fMain.TfrmMain.btnNewField.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnNewMessage">
+                                                  <param name="Local" value="fMain.TfrmMain.btnNewMessage.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnNewProjectFile">
+                                                  <param name="Local" value="fMain.TfrmMain.btnNewProjectFile.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnOpenProjectFile">
+                                                  <param name="Local" value="fMain.TfrmMain.btnOpenProjectFile.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnProjectCancel">
+                                                  <param name="Local" value="fMain.TfrmMain.btnProjectCancel.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnProjectClose">
+                                                  <param name="Local" value="fMain.TfrmMain.btnProjectClose.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnProjectOk">
+                                                  <param name="Local" value="fMain.TfrmMain.btnProjectOk.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnProjectSave">
+                                                  <param name="Local" value="fMain.TfrmMain.btnProjectSave.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="cbFieldGenerate">
+                                                  <param name="Local" value="fMain.TfrmMain.cbFieldGenerate.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="cbFreeNeeded">
+                                                  <param name="Local" value="fMain.TfrmMain.cbFreeNeeded.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="cbMessageGenerate">
+                                                  <param name="Local" value="fMain.TfrmMain.cbMessageGenerate.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="cbMessageRegisterOnClient">
+                                                  <param name="Local" value="fMain.TfrmMain.cbMessageRegisterOnClient.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="cbMessageRegisterOnServer">
+                                                  <param name="Local" value="fMain.TfrmMain.cbMessageRegisterOnServer.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="edtFieldDefaultValue">
+                                                  <param name="Local" value="fMain.TfrmMain.edtFieldDefaultValue.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="edtFieldDelphiFieldName">
+                                                  <param name="Local" value="fMain.TfrmMain.edtFieldDelphiFieldName.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="edtFieldDelphiFieldType">
+                                                  <param name="Local" value="fMain.TfrmMain.edtFieldDelphiFieldType.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="edtFieldDescription">
+                                                  <param name="Local" value="fMain.TfrmMain.edtFieldDescription.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="edtFieldName">
+                                                  <param name="Local" value="fMain.TfrmMain.edtFieldName.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="edtMessageDelphiClassName">
+                                                  <param name="Local" value="fMain.TfrmMain.edtMessageDelphiClassName.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="edtMessageDescription">
+                                                  <param name="Local" value="fMain.TfrmMain.edtMessageDescription.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="edtMessageName">
+                                                  <param name="Local" value="fMain.TfrmMain.edtMessageName.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="edtProjectConsoleUnitsUsed">
+                                                  <param name="Local" value="fMain.TfrmMain.edtProjectConsoleUnitsUsed.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="edtProjectDelphiClientClassName">
+                                                  <param name="Local" value="fMain.TfrmMain.edtProjectDelphiClientClassName.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="edtProjectDelphiMessageClassPrefix">
+                                                  <param name="Local" value="fMain.TfrmMain.edtProjectDelphiMessageClassPrefix.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="edtProjectDelphiMessageClassSuffix">
+                                                  <param name="Local" value="fMain.TfrmMain.edtProjectDelphiMessageClassSuffix.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="edtProjectDelphiServerClassName">
+                                                  <param name="Local" value="fMain.TfrmMain.edtProjectDelphiServerClassName.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="edtProjectDelphiUnitName">
+                                                  <param name="Local" value="fMain.TfrmMain.edtProjectDelphiUnitName.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="edtProjectDelphiUnitsUsed">
+                                                  <param name="Local" value="fMain.TfrmMain.edtProjectDelphiUnitsUsed.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="edtProjectDescription">
+                                                  <param name="Local" value="fMain.TfrmMain.edtProjectDescription.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="edtProjectFMXUnitsUsed">
+                                                  <param name="Local" value="fMain.TfrmMain.edtProjectFMXUnitsUsed.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="edtProjectName">
+                                                  <param name="Local" value="fMain.TfrmMain.edtProjectName.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="edtProjectVCLUnitsUsed">
+                                                  <param name="Local" value="fMain.TfrmMain.edtProjectVCLUnitsUsed.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lButtons">
+                                                  <param name="Local" value="fMain.TfrmMain.lButtons.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lHomeScreen">
+                                                  <param name="Local" value="fMain.TfrmMain.lHomeScreen.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lProjectDefaultMessageClassName">
+                                                  <param name="Local" value="fMain.TfrmMain.lProjectDefaultMessageClassName.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lProjectLeft">
+                                                  <param name="Local" value="fMain.TfrmMain.lProjectLeft.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lProjectScreen">
+                                                  <param name="Local" value="fMain.TfrmMain.lProjectScreen.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lblFieldDefaultValue">
+                                                  <param name="Local" value="fMain.TfrmMain.lblFieldDefaultValue.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lblFieldDelphiFieldName">
+                                                  <param name="Local" value="fMain.TfrmMain.lblFieldDelphiFieldName.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lblFieldDelphiFieldType">
+                                                  <param name="Local" value="fMain.TfrmMain.lblFieldDelphiFieldType.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lblFieldDelphiStreamType">
+                                                  <param name="Local" value="fMain.TfrmMain.lblFieldDelphiStreamType.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lblFieldDescription">
+                                                  <param name="Local" value="fMain.TfrmMain.lblFieldDescription.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lblFieldName">
+                                                  <param name="Local" value="fMain.TfrmMain.lblFieldName.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lblFieldOrder">
+                                                  <param name="Local" value="fMain.TfrmMain.lblFieldOrder.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lblMessageDelphiClassName">
+                                                  <param name="Local" value="fMain.TfrmMain.lblMessageDelphiClassName.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lblMessageDescription">
+                                                  <param name="Local" value="fMain.TfrmMain.lblMessageDescription.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lblMessageID">
+                                                  <param name="Local" value="fMain.TfrmMain.lblMessageID.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lblMessageName">
+                                                  <param name="Local" value="fMain.TfrmMain.lblMessageName.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lblProjectConsoleUnitsUsed">
+                                                  <param name="Local" value="fMain.TfrmMain.lblProjectConsoleUnitsUsed.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lblProjectDefaultMessageClassName">
+                                                  <param name="Local" value="fMain.TfrmMain.lblProjectDefaultMessageClassName.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lblProjectDelphiClientClassName">
+                                                  <param name="Local" value="fMain.TfrmMain.lblProjectDelphiClientClassName.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lblProjectDelphiServerClassName">
+                                                  <param name="Local" value="fMain.TfrmMain.lblProjectDelphiServerClassName.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lblProjectDelphiUnitName">
+                                                  <param name="Local" value="fMain.TfrmMain.lblProjectDelphiUnitName.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lblProjectDelphiUnitsUsed">
+                                                  <param name="Local" value="fMain.TfrmMain.lblProjectDelphiUnitsUsed.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lblProjectDescription">
+                                                  <param name="Local" value="fMain.TfrmMain.lblProjectDescription.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lblProjectFMXUnitsUsed">
+                                                  <param name="Local" value="fMain.TfrmMain.lblProjectFMXUnitsUsed.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lblProjectName">
+                                                  <param name="Local" value="fMain.TfrmMain.lblProjectName.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lblProjectVCLUnitsUsed">
+                                                  <param name="Local" value="fMain.TfrmMain.lblProjectVCLUnitsUsed.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="mnuAbout">
+                                                  <param name="Local" value="fMain.TfrmMain.mnuAbout.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="mnuClose">
+                                                  <param name="Local" value="fMain.TfrmMain.mnuClose.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="mnuDelphiExport">
+                                                  <param name="Local" value="fMain.TfrmMain.mnuDelphiExport.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="mnuFile">
+                                                  <param name="Local" value="fMain.TfrmMain.mnuFile.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="mnuHelp">
+                                                  <param name="Local" value="fMain.TfrmMain.mnuHelp.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="mnuMacOS">
+                                                  <param name="Local" value="fMain.TfrmMain.mnuMacOS.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="mnuNewFile">
+                                                  <param name="Local" value="fMain.TfrmMain.mnuNewFile.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="mnuOpenFile">
+                                                  <param name="Local" value="fMain.TfrmMain.mnuOpenFile.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="mnuOptions">
+                                                  <param name="Local" value="fMain.TfrmMain.mnuOptions.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="mnuProject">
+                                                  <param name="Local" value="fMain.TfrmMain.mnuProject.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="mnuQuit">
+                                                  <param name="Local" value="fMain.TfrmMain.mnuQuit.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="mnuSave">
+                                                  <param name="Local" value="fMain.TfrmMain.mnuSave.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="mnuTools">
+                                                  <param name="Local" value="fMain.TfrmMain.mnuTools.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="rbFieldStreamBitmap">
+                                                  <param name="Local" value="fMain.TfrmMain.rbFieldStreamBitmap.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="rbFieldStreamClass">
+                                                  <param name="Local" value="fMain.TfrmMain.rbFieldStreamClass.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="rbFieldStreamSizeOf">
+                                                  <param name="Local" value="fMain.TfrmMain.rbFieldStreamSizeOf.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="rbFieldStreamString">
+                                                  <param name="Local" value="fMain.TfrmMain.rbFieldStreamString.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="rbFieldStreamTODO">
+                                                  <param name="Local" value="fMain.TfrmMain.rbFieldStreamTODO.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="tcProject">
+                                                  <param name="Local" value="fMain.TfrmMain.tcProject.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="tiFieldEdit">
+                                                  <param name="Local" value="fMain.TfrmMain.tiFieldEdit.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="tiMessageEdit">
+                                                  <param name="Local" value="fMain.TfrmMain.tiMessageEdit.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="tiProjectEdit">
+                                                  <param name="Local" value="fMain.TfrmMain.tiProjectEdit.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="tvProject">
+                                                  <param name="Local" value="fMain.TfrmMain.tvProject.html">
+                                                  </OBJECT>
+                                          </UL>
+                                  </UL>
+                          </UL>
+                      <LI> <OBJECT type="text/sitemap">
+                          <param name="Name" value="Enumerations">
+                          </OBJECT>
+                          <UL>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="TSMGScreen">
+                                  <param name="Local" value="fMain.TSMGScreen.html">
+                                  </OBJECT>
+                                  <UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="None">
+                                          <param name="Local" value="fMain.TSMGScreen.None.html">
+                                          </OBJECT>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Home">
+                                          <param name="Local" value="fMain.TSMGScreen.Home.html">
+                                          </OBJECT>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Project">
+                                          <param name="Local" value="fMain.TSMGScreen.Project.html">
+                                          </OBJECT>
+                                  </UL>
+                          </UL>
+                      <LI> <OBJECT type="text/sitemap">
+                          <param name="Name" value="Variables">
+                          </OBJECT>
+                          <UL>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="frmMain">
+                                  <param name="Local" value="fMain.frmMain.html">
+                                  </OBJECT>
+                          </UL>
+                  </UL>
+              <LI> <OBJECT type="text/sitemap">
+                  <param name="Name" value="uDMAboutBoxImage">
+                  <param name="Local" value="uDMAboutBoxImage.html">
+                  </OBJECT>
+                  <UL>
+                      <LI> <OBJECT type="text/sitemap">
+                          <param name="Name" value="Classes">
+                          </OBJECT>
+                          <UL>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="TdmAboutBoxImage">
+                                  <param name="Local" value="uDMAboutBoxImage.TdmAboutBoxImage.html">
+                                  </OBJECT>
+                                  <UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Fields">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="ImageList1">
+                                                  <param name="Local" value="uDMAboutBoxImage.TdmAboutBoxImage.ImageList1.html">
+                                                  </OBJECT>
+                                          </UL>
+                                  </UL>
+                          </UL>
+                      <LI> <OBJECT type="text/sitemap">
+                          <param name="Name" value="Variables">
+                          </OBJECT>
+                          <UL>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="dmAboutBoxImage">
+                                  <param name="Local" value="uDMAboutBoxImage.dmAboutBoxImage.html">
+                                  </OBJECT>
+                          </UL>
+                  </UL>
+              <LI> <OBJECT type="text/sitemap">
+                  <param name="Name" value="uProject">
+                  <param name="Local" value="uProject.html">
+                  </OBJECT>
+                  <UL>
+                      <LI> <OBJECT type="text/sitemap">
+                          <param name="Name" value="Classes">
+                          </OBJECT>
+                          <UL>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="TMessage">
+                                  <param name="Local" value="uProject.TMessage.html">
+                                  </OBJECT>
+                                  <UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Constructors">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="Create">
+                                                  <param name="Local" value="uProject.TMessage.Create.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="Destroy">
+                                                  <param name="Local" value="uProject.TMessage.Destroy.html">
+                                                  </OBJECT>
+                                          </UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Properties">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="AsJSON">
+                                                  <param name="Local" value="uProject.TMessage.AsJSON.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="DelphiClassName">
+                                                  <param name="Local" value="uProject.TMessage.DelphiClassName.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="Description">
+                                                  <param name="Local" value="uProject.TMessage.Description.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="Fields">
+                                                  <param name="Local" value="uProject.TMessage.Fields.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="GenerateTheMessage">
+                                                  <param name="Local" value="uProject.TMessage.GenerateTheMessage.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="MessageID">
+                                                  <param name="Local" value="uProject.TMessage.MessageID.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="Name">
+                                                  <param name="Local" value="uProject.TMessage.Name.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="ParentList">
+                                                  <param name="Local" value="uProject.TMessage.ParentList.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="RegisterMessageInTheClient">
+                                                  <param name="Local" value="uProject.TMessage.RegisterMessageInTheClient.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="RegisterMessageInTheServer">
+                                                  <param name="Local" value="uProject.TMessage.RegisterMessageInTheServer.html">
+                                                  </OBJECT>
+                                          </UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Methods">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="DefaultDelphiClassName">
+                                                  <param name="Local" value="uProject.TMessage.DefaultDelphiClassName.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="ValueChanged">
+                                                  <param name="Local" value="uProject.TMessage.ValueChanged.html">
+                                                  </OBJECT>
+                                          </UL>
+                                  </UL>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="TMessageField">
+                                  <param name="Local" value="uProject.TMessageField.html">
+                                  </OBJECT>
+                                  <UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Constructors">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="Create">
+                                                  <param name="Local" value="uProject.TMessageField.Create.html">
+                                                  </OBJECT>
+                                          </UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Properties">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="AsJSON">
+                                                  <param name="Local" value="uProject.TMessageField.AsJSON.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="DefaultValue">
+                                                  <param name="Local" value="uProject.TMessageField.DefaultValue.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="DelphiFieldName">
+                                                  <param name="Local" value="uProject.TMessageField.DelphiFieldName.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="DelphiFieldStreamFormat">
+                                                  <param name="Local" value="uProject.TMessageField.DelphiFieldStreamFormat.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="DelphiFieldType">
+                                                  <param name="Local" value="uProject.TMessageField.DelphiFieldType.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="Description">
+                                                  <param name="Local" value="uProject.TMessageField.Description.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="GenerateTheField">
+                                                  <param name="Local" value="uProject.TMessageField.GenerateTheField.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="IsAClassNeedsAFree">
+                                                  <param name="Local" value="uProject.TMessageField.IsAClassNeedsAFree.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="Name">
+                                                  <param name="Local" value="uProject.TMessageField.Name.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="Order">
+                                                  <param name="Local" value="uProject.TMessageField.Order.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="ParentList">
+                                                  <param name="Local" value="uProject.TMessageField.ParentList.html">
+                                                  </OBJECT>
+                                          </UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Methods">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="DefaultDelphiFieldName">
+                                                  <param name="Local" value="uProject.TMessageField.DefaultDelphiFieldName.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="ValueChanged">
+                                                  <param name="Local" value="uProject.TMessageField.ValueChanged.html">
+                                                  </OBJECT>
+                                          </UL>
+                                  </UL>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="TMessageFieldsList">
+                                  <param name="Local" value="uProject.TMessageFieldsList.html">
+                                  </OBJECT>
+                                  <UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Constructors">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="Create">
+                                                  <param name="Local" value="uProject.TMessageFieldsList.Create.html">
+                                                  </OBJECT>
+                                          </UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Properties">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="AsJSON">
+                                                  <param name="Local" value="uProject.TMessageFieldsList.AsJSON.html">
+                                                  </OBJECT>
+                                          </UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Methods">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="Add">
+                                                  <param name="Local" value="uProject.TMessageFieldsList.Add.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="GetMaxOrder">
+                                                  <param name="Local" value="uProject.TMessageFieldsList.GetMaxOrder.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="Remove">
+                                                  <param name="Local" value="uProject.TMessageFieldsList.Remove.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="SortByOrder">
+                                                  <param name="Local" value="uProject.TMessageFieldsList.SortByOrder.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="ValueChanged">
+                                                  <param name="Local" value="uProject.TMessageFieldsList.ValueChanged.html">
+                                                  </OBJECT>
+                                          </UL>
+                                  </UL>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="TMessagesList">
+                                  <param name="Local" value="uProject.TMessagesList.html">
+                                  </OBJECT>
+                                  <UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Constructors">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="Create">
+                                                  <param name="Local" value="uProject.TMessagesList.Create.html">
+                                                  </OBJECT>
+                                          </UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Properties">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="AsJSON">
+                                                  <param name="Local" value="uProject.TMessagesList.AsJSON.html">
+                                                  </OBJECT>
+                                          </UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Methods">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="Add">
+                                                  <param name="Local" value="uProject.TMessagesList.Add.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="GetDelphiImplementation">
+                                                  <param name="Local" value="uProject.TMessagesList.GetDelphiImplementation.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="GetDelphiInterface">
+                                                  <param name="Local" value="uProject.TMessagesList.GetDelphiInterface.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="GetMaxMessageID">
+                                                  <param name="Local" value="uProject.TMessagesList.GetMaxMessageID.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="Remove">
+                                                  <param name="Local" value="uProject.TMessagesList.Remove.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="SortByDelphiClassName">
+                                                  <param name="Local" value="uProject.TMessagesList.SortByDelphiClassName.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="SortByMessageID">
+                                                  <param name="Local" value="uProject.TMessagesList.SortByMessageID.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="ValueChanged">
+                                                  <param name="Local" value="uProject.TMessagesList.ValueChanged.html">
+                                                  </OBJECT>
+                                          </UL>
+                                  </UL>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="TProject">
+                                  <param name="Local" value="uProject.TProject.html">
+                                  </OBJECT>
+                                  <UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Constructors">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="Create">
+                                                  <param name="Local" value="uProject.TProject.Create.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="Destroy">
+                                                  <param name="Local" value="uProject.TProject.Destroy.html">
+                                                  </OBJECT>
+                                          </UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Properties">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="AsDelphi">
+                                                  <param name="Local" value="uProject.TProject.AsDelphi.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="AsJSON">
+                                                  <param name="Local" value="uProject.TProject.AsJSON.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="AsString">
+                                                  <param name="Local" value="uProject.TProject.AsString.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="ConsoleUnitsUsed">
+                                                  <param name="Local" value="uProject.TProject.ConsoleUnitsUsed.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="DelphiClientClassName">
+                                                  <param name="Local" value="uProject.TProject.DelphiClientClassName.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="DelphiMessageClassNamePrefix">
+                                                  <param name="Local" value="uProject.TProject.DelphiMessageClassNamePrefix.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="DelphiMessageClassNameSuffix">
+                                                  <param name="Local" value="uProject.TProject.DelphiMessageClassNameSuffix.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="DelphiServerClassName">
+                                                  <param name="Local" value="uProject.TProject.DelphiServerClassName.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="DelphiUnitName">
+                                                  <param name="Local" value="uProject.TProject.DelphiUnitName.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="DelphiUnitsUsed">
+                                                  <param name="Local" value="uProject.TProject.DelphiUnitsUsed.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="Description">
+                                                  <param name="Local" value="uProject.TProject.Description.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="FMXUnitsUsed">
+                                                  <param name="Local" value="uProject.TProject.FMXUnitsUsed.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="FileName">
+                                                  <param name="Local" value="uProject.TProject.FileName.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="HasChanged">
+                                                  <param name="Local" value="uProject.TProject.HasChanged.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="Messages">
+                                                  <param name="Local" value="uProject.TProject.Messages.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="Name">
+                                                  <param name="Local" value="uProject.TProject.Name.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="VCLUnitsUsed">
+                                                  <param name="Local" value="uProject.TProject.VCLUnitsUsed.html">
+                                                  </OBJECT>
+                                          </UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Methods">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="AddPrefixAndSuffix">
+                                                  <param name="Local" value="uProject.TProject.AddPrefixAndSuffix.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="DefaultDelphiClientClassName">
+                                                  <param name="Local" value="uProject.TProject.DefaultDelphiClientClassName.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="DefaultDelphiServerClassName">
+                                                  <param name="Local" value="uProject.TProject.DefaultDelphiServerClassName.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="DefaultDelphiUnitName">
+                                                  <param name="Local" value="uProject.TProject.DefaultDelphiUnitName.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="LoadFromFile">
+                                                  <param name="Local" value="uProject.TProject.LoadFromFile.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="SaveToFile">
+                                                  <param name="Local" value="uProject.TProject.SaveToFile.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="ValueChanged">
+                                                  <param name="Local" value="uProject.TProject.ValueChanged.html">
+                                                  </OBJECT>
+                                          </UL>
+                                  </UL>
+                          </UL>
+                      <LI> <OBJECT type="text/sitemap">
+                          <param name="Name" value="Enumerations">
+                          </OBJECT>
+                          <UL>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="TDelphiFieldStreamFormat">
+                                  <param name="Local" value="uProject.TDelphiFieldStreamFormat.html">
+                                  </OBJECT>
+                                  <UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="TODO">
+                                          <param name="Local" value="uProject.TDelphiFieldStreamFormat.TODO.html">
+                                          </OBJECT>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="RWSizeOf">
+                                          <param name="Local" value="uProject.TDelphiFieldStreamFormat.RWSizeOf.html">
+                                          </OBJECT>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="RWString">
+                                          <param name="Local" value="uProject.TDelphiFieldStreamFormat.RWString.html">
+                                          </OBJECT>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="ClassLoadFromStreamSaveToStream">
+                                          <param name="Local" value="uProject.TDelphiFieldStreamFormat.ClassLoadFromStreamSaveToStream.html">
+                                          </OBJECT>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="RWBitmap">
+                                          <param name="Local" value="uProject.TDelphiFieldStreamFormat.RWBitmap.html">
+                                          </OBJECT>
+                                  </UL>
+                          </UL>
+                      <LI> <OBJECT type="text/sitemap">
+                          <param name="Name" value="Constants">
+                          </OBJECT>
+                          <UL>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="CDefaultDelphiMessageClassNamePrefix">
+                                  <param name="Local" value="uProject.CDefaultDelphiMessageClassNamePrefix.html">
+                                  </OBJECT>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="CDefaultDelphiMessageClassNameSuffix">
+                                  <param name="Local" value="uProject.CDefaultDelphiMessageClassNameSuffix.html">
+                                  </OBJECT>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="CVersionLevel">
+                                  <param name="Local" value="uProject.CVersionLevel.html">
+                                  </OBJECT>
+                          </UL>
+                      <LI> <OBJECT type="text/sitemap">
+                          <param name="Name" value="Routines">
+                          </OBJECT>
+                          <UL>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="ToDelphiConst">
+                                  <param name="Local" value="uProject.ToDelphiConst.html">
+                                  </OBJECT>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="WrapTextWithPrefix">
+                                  <param name="Local" value="uProject.WrapTextWithPrefix.html">
+                                  </OBJECT>
+                          </UL>
+                  </UL>
+          </UL>
+    </UL>
+</BODY>
+</HTML>
