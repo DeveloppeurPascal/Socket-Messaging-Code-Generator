@@ -2,6 +2,19 @@
 
 [This page in English.](README.md)
 
+> [!WARNING]
+> Suite à la décision de Microsoft de fondre GitHub dans sa division IA à l'été 2025 et donc de ne considérer ce que nous publions dessus que comme une source d'entrainement de ses modèles sans contre partie (à part l'hébergement des codes sources) ou nous abreuver de leurs injonctions à utiliser Copilot partout, pour tout et n'importe quoi, j'ai pris la décision d'arrêter la maintenance des dépôts ici.
+>
+> La maintenance de ce projet est déplacée vers Codeberg sur https://codeberg.org/PatrickPremartin/Socket-Messaging-Code-Generator
+>
+> Codeberg est un hébergement associatif situé en Europe, respectueux des développeurs, de la licence de chaque projet et de la vie privée des personnes qui s'y connectent.
+
+> [!NOTE]
+> Pour ouvrir ou intervenir sur un ticket de ce projet, rendez-vous sur https://codeberg.org/PatrickPremartin/Socket-Messaging-Code-Generator/issues
+> Pour faire un PULL REQUEST sur ce projet, rendez-vous sur https://codeberg.org/PatrickPremartin/Socket-Messaging-Code-Generator/pulls
+> Pour toute autre information ou me contacter vous pouvez aussi consulter le site Internet du projet sur https://smcodegenerator.olfsoftware.fr ou son devlog sur https://smcodegenerator.olfsoftware.fr/dev-corner.html
+> Ce dépôt de code sera archivé une fois la migration terminée et ne bénéficiera plus de mise à jour sur GitHub.
+
 Ce dépôt contient les codes sources du programme en Delphi de génération d'unités Pascal simplifiant l'utilisation de [la librairie Socket Messaging](https://socketmessaging.developpeur-pascal.fr/) dans le cadre du développement de logiciels clients/serveur sur réseau TCP/IP.
 
 La librairie est utilisable à la main si vous préférez coder. Des exemples sont disponibles sur son site Internet.
